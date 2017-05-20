@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Sistema de donativos</title>
+
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- endbuild -->
+
+  </head>
+  <body ng-app="donativosApp">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#!/bienHechores" style="margin-left: 100px;margin-right: 50px; font-size: 20px;"><b>SISTEMA DONATIVOS</b></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li><a href="#!/altaUsuario"><b>Alta de usuario</b></a></li>
+        <li class=""><a href="#!/bienHechores"><b>Bienhechores</b><span class="sr-only">(current)</span></a></li>
+        <li><a href="#!/colaboradores"><b>Colaboradores</b></a></li>
+        <li><a href="#"><b>Folios recibidos</b></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Reportes</b><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Donativos realizados y faltantes</a></li>
+            <li><a href="#">Recibos entregados</a></li>
+            <li><a href="#">Recolección de donativos</a></li>
+            <li><a href="#">Zonas</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav navbar-nav navbar-right" style="margin-top: 8px; margin-right: 100px">
+      
+        <a href="#" class="btn btn-info btn-md">
+          <span class="glyphicon glyphicon-log-out" ></span> <b>Cerrar sesión </b></a>
+      </ul>
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <div class="container">
+    <div ng-view=""></div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+      </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/bootstrap-validator/dist/validator.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/bienhechores.js"></script>
+        <script src="scripts/services/bienhechores.js"></script>
+        <script src="scripts/controllers/nuevobienhechor.js"></script>
+        <script src="scripts/controllers/editarbienhechor.js"></script>
+        <script src="scripts/controllers/colaboradores.js"></script>
+        <script src="scripts/services/colaboradores.js"></script>
+        <script src="scripts/controllers/editarcolaborador.js"></script>
+        <script src="scripts/controllers/nuevocolaborador.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
