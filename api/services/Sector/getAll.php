@@ -14,6 +14,6 @@ header("Access-Control-Allow-Origin: *");
 header('Content-type: application/json');
 echo ")]}'\n";
 
-$sector = SectorDAO::getSector();
+$sector = SectorDAO::getSectores();
 
 echo json_encode($sector);

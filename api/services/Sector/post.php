@@ -8,13 +8,12 @@
 
 require '../../database/SectorDAO.php';
 require '../../beans/Sector.php';
-header("Access-Control-Allow-Origin: *");
 
 $json = json_decode(file_get_contents("php://input"));
 
 $sector = new Sector();
 
 $sector->setNombre($json->nombre);
-$idzona->setIdzona($json->idzona);
+$sector->setIdZona($json->idZona);
 
 SectorDAO::postSector($sector);

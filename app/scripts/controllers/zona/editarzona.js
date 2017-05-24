@@ -9,8 +9,7 @@
  */
 angular.module('donativosApp')
   .controller('EditarzonaCtrl', function (zona, $scope, $routeParams) {
-
-      console.log($routeParams.id);
+      
 
       zona.get($routeParams.id)
           .then(function(data){
@@ -24,7 +23,7 @@ angular.module('donativosApp')
       };
 
       $scope.openModal = function () {
-          if(($scope.bienHechor === undefined)){
+          if(($scope.zona === undefined)){
               $("#editModal").modal();
               $scope.modalMessage = "¿Seguro que desea guardar los cambios en  "+$scope.zona.nombre+"?";
           }

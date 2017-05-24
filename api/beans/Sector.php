@@ -11,7 +11,7 @@ class Sector
 
     public $id;
     public $nombre;
-    public $idzona
+    public $idZona;
 
     /**
      * Sector constructor.
@@ -56,15 +56,16 @@ class Sector
     /**
      * @return mixed
      */
-    public function getIdzona()
+    public function getIdZona()
     {
-        return $this->idzona;
+        return $this->idZona;
     }
 
     /**
      * @param mixed $idzona
      */
-    public function setIdzona($idzona)
+    public function setIdZona($idZona)
     {
-        $this->idzona = $idzona;
+        $this->idZona = $idZona;
     }
+}
