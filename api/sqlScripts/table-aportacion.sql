@@ -3,8 +3,8 @@ CREATE TABLE aportacion (
   monto DOUBLE NOT NULL,
   frecuenciaMensual DOUBLE NOT NULL,
   metodoAportacion VARCHAR(255) NOT NULL,
-  idBienhechor INT NOT NULL
-   PRIMARY KEY (id)
+  idBienhechor INT NOT NULL,
+   PRIMARY KEY (id),
    FOREIGN KEY (idBienhechor)
         REFERENCES bienhechor(id)
 )

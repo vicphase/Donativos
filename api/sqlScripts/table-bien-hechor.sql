@@ -12,8 +12,8 @@ CREATE TABLE bienhechor(
      telefonoCelular VARCHAR(64) NOT NULL,
      correo VARCHAR(64) NOT NULL,
      fechaNacimiento DATE NOT NULL,
-     nicho BOOLEAN NOT NULL
-     PRIMARY KEY (id)
+     nicho BOOLEAN NOT NULL,
+     PRIMARY KEY (id),
 
      FOREIGN KEY (idColonia)
         REFERENCES colonia(id)
