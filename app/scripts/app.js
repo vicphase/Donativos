@@ -56,6 +56,11 @@ angular
             controller: 'EditarsectorCtrl',
             controllerAs: 'editarSector'
         })
+      .when('/colonia', {
+        templateUrl: 'views/colonia.html',
+        controller: 'ColoniaCtrl',
+        controllerAs: 'colonia'
+      })
       .otherwise({
         redirectTo: '/'
       });
