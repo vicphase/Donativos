@@ -10,8 +10,8 @@ class DBClass {
 
     private static $DB_CONNECTIONSTRING = 'localhost';
     private static $DB_USERNAME = 'root';
-    private static $DB_PASSWORD = '021195vic';
-    private static $DB_DATABASE = 'Donativos';
+    private static $DB_PASSWORD = '';
+    private static $DB_DATABASE = 'donativos';
 
     private static $db = null;
 

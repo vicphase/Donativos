@@ -31,9 +31,17 @@ angular
         controller: 'ZonaCtrl',
         controllerAs: 'zona'
       })
+        .when('/nuevaZona', {
+            templateUrl: 'views/zona/new.html',
+            controller: 'NuevazonaCtrl',
+            controllerAs: 'nuevaZona'
+        })
+        .when('/editarZona/:id', {
+            templateUrl: 'views/zona/edit.html',
+            controller: 'EditarzonaCtrl',
+            controllerAs: 'editarZona'
+        })
       .otherwise({
         redirectTo: '/'
       });
   });
-// hola soy eris
-// hola soy betillo

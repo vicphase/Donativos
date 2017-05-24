@@ -6,9 +6,8 @@
  * Time: 7:06 PM
  */
 
-require '../../database/Zona.php';
+require '../../database/ZonaDAO.php';
 
-header("Access-Control-Allow-Origin: *");
 header('Content-type: application/json');
 echo ")]}'\n";
 

@@ -8,7 +8,9 @@
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('EditarzonaCtrl', function (zona, $scope) {
+  .controller('EditarzonaCtrl', function (zona, $scope, $routeParams) {
+
+      console.log($routeParams.id);
 
       zona.get($routeParams.id)
           .then(function(data){
@@ -22,15 +24,15 @@ angular.module('donativosApp')
       };
 
       $scope.openModal = function () {
-          if(!($scope.bienHechor === undefined)){
-              $("#editModal").modal()
-              $scope.modalMessage = "¿Seguro que desea guardar los cambios en  "+$scope.zona.nombre;
+          if(($scope.bienHechor === undefined)){
+              $("#editModal").modal();
+              $scope.modalMessage = "¿Seguro que desea guardar los cambios en  "+$scope.zona.nombre+"?";
           }
       };
 
       $scope.openCancelModal = function () {
           if(!($scope.zona === undefined)){
-              $("#cancelModal").modal()
+              $("#cancelModal").modal();
               $scope.modalMessage = "Se perderan los cambios de  "+$scope.zona.nombre;
           }
       };
