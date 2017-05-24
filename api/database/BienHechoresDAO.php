@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Victor
- * Date: 4/7/2017
- * Time: 4:17 PM
- */
 
 require('DBClass.php');
 
@@ -41,47 +35,42 @@ class BienHechoresDAO
         $nombre=$bienHechor->getNombre();
         $apellidoPaterno=$bienHechor->getApellidoPaterno();
         $apellidoMaterno=$bienHechor->getApellidoMaterno();
-        $direccion=$bienHechor->getDireccion();
+        $calle=$bienHechor->getCalle();
+        $numero=$bienHechor->getNumero();
         $ciudad=$bienHechor->getCiudad();
         $estado=$bienHechor->getEstado();
         $telefonoLocal=$bienHechor->getTelefonoLocal();
         $telefonoCelular=$bienHechor->getTelefonoCelular();
         $correo=$bienHechor->getCorreo();
         $fechaNacimiento=$bienHechor->getFechaNacimiento();
-        $frecuenciaDonativo=$bienHechor->getFrecuenciaDonativo();
-        $metodoAportacion=$bienHechor->getMetodoAportacion();
-        $zona=$bienHechor->getZona();
-        $sector=$bienHechor->getSector();
+        $nicho=$bienHechor->getNicho();
+        
 
         DBClass::query("INSERT INTO bienhechores 
         (nombre,
         apellidoPaterno, 
         apellidoMaterno, 
-        direccion, 
+        calle,
+        numero,
         ciudad, 
         estado, 
         telefonoLocal, 
         telefonoCelular, 
         correo, 
         fechaNacimiento, 
-        frecuenciaDonativo, 
-        metodoAportacion, 
-        zona, 
-        sector)
+        nicho)
         VALUES ("."'".$nombre."'".', '
         ."'".$apellidoPaterno."'".', '
             ."'".$apellidoMaterno."'".', '
-            ."'".$direccion."'".', '
+            ."'".$calle."'".', '
+            ."'".$numero."'".', '
             ."'".$ciudad."'".', '
             ."'".$estado."'".', '
             ."'".$telefonoLocal."'".', '
             ."'".$telefonoCelular."'".', '
             ."'".$correo."'".', '
             ."'".$fechaNacimiento."'".', '
-            ."'".$frecuenciaDonativo."'".', '
-            ."'".$metodoAportacion."'".', '
-            ."'".$zona."'".', '
-            ."'".$sector."'".")");
+            ."'".$nicho."'".")");
 
     }
 
@@ -91,7 +80,8 @@ class BienHechoresDAO
         $nombre=$bienHechor->getNombre();
         $apellidoPaterno=$bienHechor->getApellidoPaterno();
         $apellidoMaterno=$bienHechor->getApellidoMaterno();
-        $direccion=$bienHechor->getDireccion();
+        $calle=$bienHechor->getCalle();
+        $numero=$bienHechor->getNumero();
         $ciudad=$bienHechor->getCiudad();
         $estado=$bienHechor->getEstado();
         $telefonoLocal=$bienHechor->getTelefonoLocal();
@@ -99,25 +89,21 @@ class BienHechoresDAO
         $correo=$bienHechor->getCorreo();
         $fechaNacimiento=$bienHechor->getFechaNacimiento();
         $frecuenciaDonativo=$bienHechor->getFrecuenciaDonativo();
-        $metodoAportacion=$bienHechor->getMetodoAportacion();
-        $zona=$bienHechor->getZona();
-        $sector=$bienHechor->getSector();
+        $nicho=$bienHechor->getNicho();
 
         DBClass::query("UPDATE bienhechores
         SET nombre="."'".$nombre."',
         apellidoPaterno="."'".$apellidoPaterno."',
         apellidoMaterno="."'".$apellidoMaterno."',
-        direccion="."'".$direccion."',
+        calle="."'".$calle."',
+        numero="."'".$numero."',
         ciudad="."'".$ciudad."',
         estado="."'".$estado."',
         telefonoLocal="."'".$telefonoLocal."',
         telefonoCelular="."'".$telefonoCelular."',
         correo="."'".$correo."',
         fechaNacimiento="."'".$fechaNacimiento."',
-        frecuenciaDonativo="."'".$frecuenciaDonativo."',
-        metodoAportacion="."'".$metodoAportacion."',
-        zona="."'".$zona."',
-        sector="."'".$sector."'
+        nicho="."'".$nicho."'
         WHERE id=".$id
         );
     }
