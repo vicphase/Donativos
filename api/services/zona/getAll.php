@@ -9,6 +9,7 @@
 
 require '../../database/ZonaDAO.php';
 
+header("Access-Control-Allow-Origin: *");
 header('Content-type: application/json');
 echo ")]}'\n";
 

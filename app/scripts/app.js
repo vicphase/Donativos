@@ -22,39 +22,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-          templateUrl: 'views/bienHechores/all.html',
-          controller: 'BienhechoresCtrl',
-          controllerAs: 'bienHechores'
-      })
-      .when('/bienHechores', {
-        templateUrl: 'views/bienHechores/all.html',
-        controller: 'BienhechoresCtrl',
-        controllerAs: 'bienHechores'
-      })
-      .when('/nuevoBienHechor', {
-        templateUrl: 'views/bienHechores/new.html',
-        controller: 'NuevobienhechorCtrl',
-        controllerAs: 'nuevoBienHechor'
-      })
-      .when('/editarBienHechor/:id', {
-        templateUrl: 'views/bienHechores/edit.html',
-        controller: 'EditarbienhechorCtrl',
-        controllerAs: 'editarBienHechor'
-      })
-      .when('/colaboradores', {
-        templateUrl: 'views/colaboradores/all.html',
-        controller: 'ColaboradoresCtrl',
-        controllerAs: 'colaboradores'
-      })
-      .when('/editarColaborador/:id', {
-        templateUrl: 'views/colaboradores/edit.html',
-        controller: 'EditarcolaboradorCtrl',
-        controllerAs: 'editarColaborador'
-      })
-      .when('/nuevoColaborador', {
-        templateUrl: 'views/colaboradores/new.html',
-        controller: 'NuevocolaboradorCtrl',
-        controllerAs: 'nuevoColaborador'
+          templateUrl: 'views/zona/all.html',
+          controller: 'ZonaCtrl',
+          controllerAs: 'zona'
       })
       .when('/zona', {
         templateUrl: 'views/zona/all.html',

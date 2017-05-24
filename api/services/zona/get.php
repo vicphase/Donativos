@@ -6,13 +6,14 @@
  * Time: 7:06 PM
  */
 
-require '../../database/BienHechoresDAO.php';
+require '../../database/Zona.php';
 
+header("Access-Control-Allow-Origin: *");
 header('Content-type: application/json');
 echo ")]}'\n";
 
 $json = json_decode(file_get_contents("php://input"));
 
-$bienHechor = BienHechoresDAO::getBienHechor($json);
+$zona = ZonaDAO::getZona($json);
 
-echo json_encode($bienHechor);
+echo json_encode($zona);
