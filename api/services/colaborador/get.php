@@ -6,13 +6,13 @@
  * Time: 7:06 PM
  */
 
-require '../../database/BienHechoresDAO.php';
+require '../../database/ColaboradorDAO.php';
 
 header('Content-type: application/json');
 echo ")]}'\n";
 
 $json = json_decode(file_get_contents("php://input"));
 
-$bienHechor = BienHechoresDAO::getBienHechor($json);
+$colaborador = BienHechoresDAO::getColaborador($json);
 
-echo json_encode($bienHechor);
+echo json_encode($colaborador);
