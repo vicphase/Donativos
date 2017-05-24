@@ -6,9 +6,8 @@
  * Time: 4:40 PM
  */
 
-require '../../database/ZonaDAO.php';
-require '../../beans/Zona.php';
-header("Access-Control-Allow-Origin: *");
+require '../../database/SectorDAO.php';
+require '../../beans/Sector.php';
 
 $json = json_decode(file_get_contents("php://input"));
 
@@ -16,9 +15,6 @@ $sector = new Sector();
 
 $sector->setId($json->id);
 $sector->setNombre($json->nombre);
-$sector->setIdzona($json->idzona);
-
-
-echo "Updating";
+$sector->setIdZona($json->idZona);
 
 SectorDAO::updateSector($sector);

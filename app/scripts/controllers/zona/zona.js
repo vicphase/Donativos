@@ -20,7 +20,7 @@ angular.module('donativosApp')
     };
 
     $scope.filaSeleccionada = function(zona){
-      return zona==$scope.zona
+      return zona==$scope.zona;
     };
 
     $scope.eliminarZona=function(){
@@ -30,8 +30,8 @@ angular.module('donativosApp')
 
     $scope.openModal = function () {
       if(!($scope.zona === undefined)){
-        $("#myModal").modal()
-        $scope.modalMessage = "¿Seguro que desea eliminar a "+$scope.zona.nombre;
+        $("#myModal").modal();
+        $scope.modalMessage = "¿Seguro que desea eliminar a "+$scope.zona.nombre+"?";
       }
     };
 

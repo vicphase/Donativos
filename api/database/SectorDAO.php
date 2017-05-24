@@ -11,12 +11,11 @@ require('DBClass.php');
 
 class SectorDAO
 {
-
-    public static function getSector()
+    public static function getSectores()
     {
         $sectores = array();
 
-        $db_sectores = DBClass::query('SELECT * FROM Sector');
+        $db_sectores = DBClass::query('SELECT * FROM sector');
 
         $n = mysqli_num_rows($db_sectores);
 
@@ -39,7 +38,8 @@ class SectorDAO
     {
 
         $nombre=$sector->getNombre();
-        $idzona=$sector->getIdzona();
+        $idzona=$sector->getIdZona();
+
 
         DBClass::query("INSERT INTO Sector 
         (nombre,
@@ -49,11 +49,12 @@ class SectorDAO
 
     }
 
-    public static function updateSector($sector){
+    public static function updateSector(Sector $sector){
 
         $id=$sector->getId();
         $nombre=$sector->getNombre();
-        $idzona=$sector->getIdzona();
+        $idzona=$sector->getIdZona();
+
 
         DBClass::query("UPDATE Sector
         SET nombre="."'".$nombre."',

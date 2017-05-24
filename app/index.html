@@ -10,6 +10,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -89,8 +90,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bower_components/bootstrap-validator/dist/validator.min.js"></script>
+    <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="../bower_components/angular-animate/angular-animate.js"></script>
     <script src="../bower_components/angular-aria/angular-aria.js"></script>
     <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
@@ -99,23 +99,29 @@
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/bootstrap-validator/dist/validator.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/bienhechores.js"></script>
-        <script src="scripts/services/bienhechores.js"></script>
-        <script src="scripts/controllers/nuevobienhechor.js"></script>
-        <script src="scripts/controllers/editarbienhechor.js"></script>
-        <script src="scripts/controllers/colaboradores.js"></script>
-        <script src="scripts/services/colaboradores.js"></script>
-        <script src="scripts/controllers/editarcolaborador.js"></script>
-        <script src="scripts/controllers/nuevocolaborador.js"></script>
-        <script src="scripts/controllers/zona/zona.js"></script>
         <script src="scripts/services/zona.js"></script>
+        <script src="scripts/controllers/zona/zona.js"></script>
         <script src="scripts/controllers/zona/nuevazona.js"></script>
         <script src="scripts/controllers/zona/editarzona.js"></script>
+        <script src="scripts/services/sector.js"></script>
+        <script src="scripts/controllers/sector/sector.js"></script>
+        <script src="scripts/controllers/sector/nuevosector.js"></script>
+        <script src="scripts/controllers/sector/editarsector.js"></script>
+        <script src="scripts/services/colonia.js"></script>
+        <script src="scripts/controllers/colonia/colonia.js"></script>
+        <script src="scripts/controllers/colonia/editarcolonia.js"></script>
+        <script src="scripts/controllers/colonia/nuevacolonia.js"></script>
+        <script src="scripts/services/colaborador.js"></script>
+        <script src="scripts/controllers/colaborador/colaborador.js"></script>
+        <script src="scripts/controllers/colaborador/editarcolaborador.js"></script>
+        <script src="scripts/controllers/colaborador/nuevocolaborador.js"></script>
         <!-- endbuild -->
 </body>
 </html>

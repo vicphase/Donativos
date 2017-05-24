@@ -9,7 +9,7 @@ $json = json_decode(file_get_contents("php://input"));
 $zona = new Zona();
 
 $zona->setNombre($json->nombre);
-$zona->setIdsector($json->idsector);
-
+if(!is_null($json->idLiderZona))
+$zona->setIdLiderZona($json->idLiderZona);
 
 ZonaDAO::postZona($zona);

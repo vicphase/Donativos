@@ -22,48 +22,71 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-          templateUrl: 'views/bienHechores/all.html',
-          controller: 'BienhechoresCtrl',
-          controllerAs: 'bienHechores'
-      })
-      .when('/bienHechores', {
-        templateUrl: 'views/bienHechores/all.html',
-        controller: 'BienhechoresCtrl',
-        controllerAs: 'bienHechores'
-      })
-      .when('/nuevoBienHechor', {
-        templateUrl: 'views/bienHechores/new.html',
-        controller: 'NuevobienhechorCtrl',
-        controllerAs: 'nuevoBienHechor'
-      })
-      .when('/editarBienHechor/:id', {
-        templateUrl: 'views/bienHechores/edit.html',
-        controller: 'EditarbienhechorCtrl',
-        controllerAs: 'editarBienHechor'
-      })
-      .when('/colaboradores', {
-        templateUrl: 'views/colaboradores/all.html',
-        controller: 'ColaboradoresCtrl',
-        controllerAs: 'colaboradores'
-      })
-      .when('/editarColaborador/:id', {
-        templateUrl: 'views/colaboradores/edit.html',
-        controller: 'EditarcolaboradorCtrl',
-        controllerAs: 'editarColaborador'
-      })
-      .when('/nuevoColaborador', {
-        templateUrl: 'views/colaboradores/new.html',
-        controller: 'NuevocolaboradorCtrl',
-        controllerAs: 'nuevoColaborador'
+          templateUrl: 'views/zona/all.html',
+          controller: 'ZonaCtrl',
+          controllerAs: 'zona'
       })
       .when('/zona', {
         templateUrl: 'views/zona/all.html',
         controller: 'ZonaCtrl',
         controllerAs: 'zona'
       })
+        .when('/nuevaZona', {
+            templateUrl: 'views/zona/new.html',
+            controller: 'NuevazonaCtrl',
+            controllerAs: 'nuevaZona'
+        })
+        .when('/editarZona/:id', {
+            templateUrl: 'views/zona/edit.html',
+            controller: 'EditarzonaCtrl',
+            controllerAs: 'editarZona'
+        })
+      .when('/sector', {
+        templateUrl: 'views/sector/all.html',
+        controller: 'SectorCtrl',
+        controllerAs: 'sector'
+      })
+        .when('/nuevoSector', {
+            templateUrl: 'views/sector/new.html',
+            controller: 'NuevosectorCtrl',
+            controllerAs: 'nuevoSector'
+        })
+        .when('/editarSector/:id', {
+            templateUrl: 'views/sector/edit.html',
+            controller: 'EditarsectorCtrl',
+            controllerAs: 'editarSector'
+        })
+      .when('/colonia', {
+        templateUrl: 'views/colonia/all.html',
+        controller: 'ColoniaCtrl',
+        controllerAs: 'colonia'
+      })
+        .when('/nuevaColonia', {
+            templateUrl: 'views/colonia/new.html',
+            controller: 'NuevacoloniaCtrl',
+            controllerAs: 'nuevaColonia'
+        })
+        .when('/editarColonia/:id', {
+            templateUrl: 'views/colonia/edit.html',
+            controller: 'EditarcoloniaCtrl',
+            controllerAs: 'editarColonia'
+        })
+      .when('/colaborador', {
+            templateUrl: 'views/colaborador/all.html',
+            controller: 'ColaboradorCtrl',
+            controllerAs: 'colaborador'
+        })
+        .when('/nuevoColaborador', {
+            templateUrl: 'views/colaborador/new.html',
+            controller: 'NuevocolaboradorCtrl',
+            controllerAs: 'nuevoColaborador'
+        })
+        .when('/editarColaborador/:id', {
+            templateUrl: 'views/colaborador/edit.html',
+            controller: 'EditarcolaboradorCtrl',
+            controllerAs: 'editarColaborador'
+        })
       .otherwise({
         redirectTo: '/'
       });
   });
-// hola soy eris
-// hola soy betillo

@@ -6,13 +6,13 @@
  * Time: 7:06 PM
  */
 
-require '../../database/Zona.php';
+require '../../database/ColaboradorDAO.php';
 
 header('Content-type: application/json');
 echo ")]}'\n";
 
 $json = json_decode(file_get_contents("php://input"));
 
-$zona = ZonaDAO::getZona($json);
+$colaborador = BienHechoresDAO::getColaborador($json);
 
-echo json_encode($zona);
+echo json_encode($colaborador);
