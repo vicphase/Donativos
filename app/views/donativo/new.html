@@ -60,27 +60,29 @@
                       </div>
                </div>
         </div>
-		
-	    <div class="form-group">
-           <label class="col-md-4 control-label">ID Bienhechor</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.idBienhechor" name="idBienhechor" placeholder="ID Bienhechor" class="form-control"
-                           type="text">
-                      </div>
-               </div>
+
+        <div class="form-group">
+        <label class="col-md-4 control-label">Bienhechor</label>
+        <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <select  ng-model="donativo.idBienhechor" name="idBienhechor" placeholder="Bienhechor" class="form-control">
+                    <option  value="{{bienhechor.id}}" ng-repeat="bienhechor in bienhechores">{{bienhechor.nombre}} {{bienhechor.apellidoPaterno}} {{bienhechor.apellidoMaterno}}</option>
+                </select>
+            </div>
         </div>
-		
-	    <div class="form-group">
-           <label class="col-md-4 control-label">ID Colaborador</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.idColaborador" name="idColaborador" placeholder="idColaborador" class="form-control"
-                           type="text">
-                      </div>
-               </div>
+    </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Colaborador</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <select  ng-model="donativo.idColaborador" name="idColaborador" placeholder="Colaborador" class="form-control">
+                        <option  value="{{colaborador.id}}" ng-repeat="colaborador in colaboradores">{{colaborador.nombre}} {{colaborador.apellidoPaterno}} {{colaborador.apellidoMaterno}}</option>
+                    </select>
+                </div>
+            </div>
         </div>
 		
 	    
@@ -131,7 +133,7 @@
                     </div>
                     <div class="modal-footer">
                         <button  ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <a ng-href="#!/donativo"  ng-click="closeModal(); agregardonativo()" type="button" class="btn btn-primary btn-success">Guardar</a>
+                        <a ng-href="#!/donativo"  ng-click="closeModal(); agregarDonativo()" type="button" class="btn btn-primary btn-success">Guardar</a>
                     </div>
                 </div>
             </div>
