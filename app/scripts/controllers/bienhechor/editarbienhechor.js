@@ -12,7 +12,23 @@ angular.module('donativosApp')
       bienhechor.get($routeParams.id)
           .then(function(data){
               $scope.bienhechor = data.data;
+              $scope.bienhechor.fechaNacimiento=new Date($scope.bienhechor.fechaNacimiento);
               console.log($scope.bienhechor);
+              if($scope.bienhechor.nicho==0)
+                  $scope.bienhechor.nicho=false;
+              else
+                  $scope.bienhechor.nicho=true;
+
+              colonia.get($scope.bienhechor.idColonia)
+                  .then(function(data){
+                      var idSector = data.data.idSector;
+                      $scope.bienhechor.idSector=idSector;
+                      sector.get(idSector)
+                          .then(function(data){
+                              var idZona=data.data.idZona;
+                              $scope.bienhechor.idZona=idZona;
+                          });
+                  });
           });
 
 

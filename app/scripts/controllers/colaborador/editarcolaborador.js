@@ -13,7 +13,19 @@ angular.module('donativosApp')
           .then(function(data){
               $scope.colaborador = data.data;
               console.log($scope.colaborador);
+
+              colonia.get($scope.colaborador.idColonia)
+                  .then(function(data){
+                      var idSector = data.data.idSector;
+                      $scope.colaborador.idSector=idSector;
+                      sector.get(idSector)
+                          .then(function(data){
+                              var idZona=data.data.idZona;
+                              $scope.colaborador.idZona=idZona;
+                          });
+                  });
           });
+
 
 
       colonia.all()

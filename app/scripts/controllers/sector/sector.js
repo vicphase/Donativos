@@ -9,6 +9,7 @@
  */
 angular.module('donativosApp')
   .controller('SectorCtrl', function (sector, $scope, zona) {
+      $scope.existeSector=false;
       sector.all()
           .then(function(data){
               $scope.sectores = data;
@@ -21,6 +22,7 @@ angular.module('donativosApp')
           });
 
       $scope.seleccionarFila=function(sector){
+          $scope.existeSector=true;
           $scope.sector = sector;
       };
 

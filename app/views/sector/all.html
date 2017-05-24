@@ -1,8 +1,8 @@
 <a type="button" class="btn btn-primary" ng-href="#!/nuevoSector">Añadir</a>
 
-<a type="button" class="btn btn-success" ng-href="#!/editarSector/{{sector.id}}">Editar</a>
+<a ng-disabled="!existeSector" type="button" class="btn btn-success" ng-href="#!/editarSector/{{sector.id}}">Editar</a>
 
-<button ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+<button ng-disabled="!existeSector" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
 
 <table class="table">
     <thead>
