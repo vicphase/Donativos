@@ -1,9 +1,10 @@
 <h1>Donativos</h1>
+
 <a type="button" class="btn btn-primary" ng-href="#!/nuevoColaborador">Añadir</a>
 
-<a type="button" class="btn btn-success" ng-href="#!/editarColaborador/{{colaborador.id}}">Editar</a>
+<a ng-disabled="!existeColaborador" type="button" class="btn btn-success" ng-href="#!/editarColaborador/{{colaborador.id}}">Editar</a>
 
-<button ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+<button ng-disabled="!existeColaborador" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
 
 <table class="table">
     <thead>
@@ -45,3 +46,4 @@
 
     </tbody>
 </table>
+

@@ -20,10 +20,10 @@ class ColaboradorDAO
         return $colaboradores;
     }
 
-    public static function getColaborador()
+    public static function getColaborador($id)
     {
 
-        $db_colaboradores = DBClass::query('SELECT * FROM colaborador');
+        $db_colaboradores = DBClass::query('SELECT * FROM colaborador WHERE id='.$id);
         
         
             $tupla = mysqli_fetch_array($db_colaboradores, MYSQLI_ASSOC);

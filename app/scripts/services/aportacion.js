@@ -2,51 +2,51 @@
 
 /**
  * @ngdoc service
- * @name donativosApp.bienhechor
+ * @name donativosApp.aportacion
  * @description
- * # bienhechor
+ * # aportacion
  * Service in the donativosApp.
  */
 angular.module('donativosApp')
-  .service('bienhechor', function ($http) {
+  .service('aportacion', function ($http) {
     return {
       all: function () {
-        return $http({method: 'GET', url: 'http://localhost/Donativos/api/services/bienhechor/getAll.php'});
+        return $http({method: 'GET', url: 'http://localhost/Donativos/api/services/aportacion/getAll.php'});
       },
       get: function (id) {
         console.log("GET "+id);
         return $http({
           method: 'POST',
-          url: 'http://localhost/Donativos/api/services/bienhechor/get.php',
+          url: 'http://localhost/Donativos/api/services/aportacion/get.php',
           data: id,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
       },
-      post: function (bienhechor) {
+      post: function (aportacion) {
         console.log("POST");
-        console.log(bienhechor);
+        console.log(aportacion);
         return $http({
           method: 'POST',
-          url: 'http://localhost/Donativos/api/services/bienhechor/post.php',
-          data: bienhechor,
+          url: 'http://localhost/Donativos/api/services/aportacion/post.php',
+          data: aportacion,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
       },
-      update: function (bienhechor) {
-        console.log("Update de bienhechor");
-        console.log(bienhechor);
+      update: function (aportacion) {
+        console.log("Update de aportacion");
+        console.log(aportacion);
         return $http({
           method: 'UPDATE',
-          url: 'http://localhost/Donativos/api/services/bienhechor/update.php',
-          data: bienhechor,
+          url: 'http://localhost/Donativos/api/services/aportacion/update.php',
+          data: aportacion,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
       },
-      delete: function (bienhechor) {
+      delete: function (aportacion) {
         return $http({
           method: 'DELETE',
-          url: 'http://localhost/Donativos/api/services/bienhechor/delete.php',
-          data: bienhechor,
+          url: 'http://localhost/Donativos/api/services/aportacion/delete.php',
+          data: aportacion,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
       }

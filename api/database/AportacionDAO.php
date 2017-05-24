@@ -10,7 +10,7 @@ class AportacionDAO
     {
         $aportaciones = array();
 
-        $db_aportaciones = DBClass::query('SELECT * FROM Aportacion');
+        $db_aportaciones = DBClass::query('SELECT * FROM aportacion');
 
         $n = mysqli_num_rows($db_aportaciones);
 
@@ -21,7 +21,7 @@ class AportacionDAO
         return $aportaciones;
     }
     
-    public static function getAportacion($aportacion){
+    public static function getAportacion($id){
         
         $db_aportacion = DBClass::query('SELECT * FROM Aportacion WHERE id='.$id);
         $aportacion = mysqli_fetch_array($db_aportacion, MYSQLI_ASSOC);
@@ -32,30 +32,36 @@ class AportacionDAO
     public static function postAportacion(Aportacion $aportacion)
     {
 
-        $idFrecuenciaDonativo=$aportacion->getIdfrecuenciadonativo();
-        $idMetodoAportacion=$aportacion->getIdmetodoaportacion();
-        $idBienhechor=$aportacion->getIdbienhechor();
+        $monto=$aportacion->getMonto();
+        $frecuenciaMensual=$aportacion->getFrecuenciaMensual();
+        $metodoAportacion=$aportacion->getMetodoAportacion();
+        $idBienhechor=$aportacion->getIdBienhechor();
 
-        DBClass::query("INSERT INTO Aportacion 
-        (idFrecuenciaDonativo,
-        idMetodoAportacion, 
+
+        DBClass::query("INSERT INTO aportacion 
+        (monto,
+        frecuenciaMensual, 
+        metodoAportacion,
         idBienhechor)
-        VALUES ("."'".$idFrecuenciaDonativo."'".', '
-        ."'".$idMetodoAportacion."'".', '
+        VALUES ("."'".$monto."'".', '
+        ."'".$frecuenciaMensual."'".', '
+            ."'".$metodoAportacion."'".', '
             ."'".$idBienhechor."'".")");
 
     }
 
-    public static function updateAportacion($aportacion){
+    public static function updateAportacion(Aportacion $aportacion){
 
         $id=$aportacion->getId();
-        $idFrecuenciaDonativo=$aportacion->getIdfrecuenciadonativo();
-        $idMetodoAportacion=$aportacion->getIdmetodoaportacion();
-        $idBienhechor=$aportacion->getIdbienhechor();
+        $monto=$aportacion->getMonto();
+        $frecuenciaMensual=$aportacion->getFrecuenciaMensual();
+        $metodoAportacion=$aportacion->getMetodoAportacion();
+        $idBienhechor=$aportacion->getIdBienhechor();
 
         DBClass::query("UPDATE Aportacion
-        SET idFrecuenciaDonativo="."'".$idFrecuenciaDonativo."',
-        idMetodoAportacion="."'".$idMetodoAportacion."',
+        SET monto="."'".$monto."',
+        frecuenciaMensual="."'".$frecuenciaMensual."',
+        metodoAportacion="."'".$metodoAportacion."',
         idBienhechor="."'".$idBienhechor."'
         WHERE id=".$id
         );

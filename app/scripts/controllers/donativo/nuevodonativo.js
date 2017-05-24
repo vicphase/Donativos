@@ -2,55 +2,39 @@
 
 /**
  * @ngdoc function
- * @name donativosApp.controller:NuevobienhechorCtrl
+ * @name donativosApp.controller:NuevodonativoCtrl
  * @description
- * # NuevobienhechorCtrl
+ * # NuevodonativoCtrl
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('NuevobienhechorCtrl', function ($scope, bienhechor, colonia, sector, zona) {
-      $scope.agregarBienhechor = function () {
-          bienhechor.post($scope.bienhechor);
+  .controller('NuevodonativoCtrl', function ($scope, donativo, bienhechor, colaborador) {
+      $scope.agregarDonativo = function () {
+          donativo.post($scope.donativo);
       };
 
-      colonia.all()
+      bienhechor.all()
           .then(function(data){
-              $scope.colonias = data.data;
+              $scope.bienhechores = data.data;
+              console.log($scope.bienhechores);
           });
 
-      $scope.coloniaEnSector=function(idColonia){
-          return idColonia==$scope.idSector;
-      };
-
-      sector.all()
-          .then(function (data) {
-              $scope.sectores=data.data;
-              console.log($scope.sectores);
+      colaborador.all()
+          .then(function(data){
+              $scope.colaboradores = data.data;
+              console.log($scope.colaboradores);
           });
-
-      $scope.sectorEnZona=function(idSector){
-          return idSector==$scope.idZona;
-      };
-
-      zona.all()
-          .then(function (data) {
-              $scope.zonas=data.data;
-              console.log($scope.zonas);
-          });
-
-      $scope.true=true;
-      $scope.false=false;
 
 
       $scope.openModal = function () {
           if($scope.formValidate('myForm')){
               $("#editModal").modal();
-              $scope.modalMessage = "¿Seguro que desea añadir a "+$scope.bienhechor.nombre+"?";
+              $scope.modalMessage = "¿Seguro que desea guardar los cambios en el donativo con folio "+$scope.donativo.folioRecibo+"?";
           }
       };
 
       $scope.openCancelModal = function () {
-          if(!($scope.bienhechor === undefined)){
+          if(!($scope.donativo === undefined)){
               $("#cancelModal").modal();
               $scope.modalMessage = "Se perderan los cambios datos capturados si cancela";
           }

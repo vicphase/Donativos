@@ -9,14 +9,15 @@
  */
 angular.module('donativosApp')
   .controller('ZonaCtrl', function (zona,$scope) {
-
+      $scope.existeZona=false;
     zona.all()
         .then(function(data){
           $scope.zonas = data;
         });
 
     $scope.seleccionarFila=function(zona){
-      $scope.zona = zona;
+        $scope.existeZona=true;
+        $scope.zona = zona;
     };
 
     $scope.filaSeleccionada = function(zona){

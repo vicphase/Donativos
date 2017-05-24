@@ -8,19 +8,16 @@
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('BienhechorCtrl', function () {
+  .controller('BienhechorCtrl', function ($scope, bienhechor) {
+      $scope.existeBienhechor=false;
       bienhechor.all()
           .then(function(data){
               $scope.bienhechores = data;
           });
-
-      colonia.all()
-          .then(function (data) {
-              $scope.colonias=data.data;
-              console.log($scope.colonias);
-          });
+      
 
       $scope.seleccionarFila=function(bienhechor){
+          $scope.existeBienhechor=true;
           $scope.bienhechor = bienhechor;
       };
 

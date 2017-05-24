@@ -7,6 +7,6 @@ require '../../database/DonativoDAO.php';
 header('Content-type: application/json');
 echo ")]}'\n";
 
-$donativos = DonativosDAO::getDonativos();
+$donativos = DonativoDAO::getDonativos();
 
 echo json_encode($donativos);

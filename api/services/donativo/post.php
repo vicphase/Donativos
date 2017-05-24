@@ -8,7 +8,6 @@ $json = json_decode(file_get_contents("php://input"));
 
 $donativo = new Donativo();
 
-$donativo->setId($json->id);
 $donativo->setFecha($json->fecha);
 $donativo->setConcepto($json->concepto);
 $donativo->setMonto($json->monto);

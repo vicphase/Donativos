@@ -1,9 +1,11 @@
+
 <h1>Aportación</h1>
+
 <a type="button" class="btn btn-primary" ng-href="#!/nuevaAportacion">Añadir</a>
 
-<a type="button" class="btn btn-success" ng-href="#!/editarAportacion/{{aportacion.id}}">Editar</a>
+<a ng-disabled="!existeAportacion" type="button" class="btn btn-success" ng-href="#!/editarAportacion/{{aportacion.id}}">Editar</a>
 
-<button ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+<button ng-disabled="!existeAportacion" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
 
 <table class="table">
     <thead>
