@@ -1,11 +1,21 @@
 
 <h1>Aportación</h1>
 
-<a type="button" class="btn btn-primary" ng-href="#!/nuevaAportacion">Añadir</a>
+<div class="col-md-6">
+    <div class="col-md-6">
+        <a type="button" class="btn btn-primary" ng-href="#!/nuevaAportacion">Añadir</a>
 
-<a ng-disabled="!existeAportacion" type="button" class="btn btn-success" ng-href="#!/editarAportacion/{{aportacion.id}}">Editar</a>
+        <a ng-disabled="!existeAportacion" type="button" class="btn btn-success" ng-href="#!/editarAportacion/{{aportacion.id}}">Editar</a>
 
-<button ng-disabled="!existeAportacion" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+        <button ng-disabled="!existeAportacion" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+    </div>
+
+</div>
+
+<div class="col-md-6">
+    <input class="searchBar" type="text" ng-model="query" placeholder="Search...">
+</div>
+
 
 <table class="table">
     <thead>
@@ -17,11 +27,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-class="{selected: filaSeleccionada(aportacion)}" ng-click="seleccionarFila(aportacion)" ng-repeat="aportacion in aportaciones.data">
+    <tr ng-class="{selected: filaSeleccionada(aportacion)}" ng-click="seleccionarFila(aportacion)" ng-repeat="aportacion in aportaciones.data | filter:query">
         <td>{{aportacion.frecuenciaMensual}}</td>
         <td>{{aportacion.metodoAportacion}}</td>
         <td>${{aportacion.monto}}</td>
-        <td>{{nombreBienhechor(aportacion.idBienhechor)}}</td>
+        <td>{{nombreBienhechor(aportacion.idBienhechor,aportacion)}}{{aportacion.nombreBienhechor}}</td>
     </tr>
 
     <!-- Modal -->

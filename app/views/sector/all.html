@@ -1,11 +1,18 @@
 
 <h1>Sectores</h1>
 
-<a type="button" class="btn btn-primary" ng-href="#!/nuevoSector">Añadir</a>
+<div class="col-md-6">
+    <a type="button" class="btn btn-primary" ng-href="#!/nuevoSector">Añadir</a>
 
-<a ng-disabled="!existeSector" type="button" class="btn btn-success" ng-href="#!/editarSector/{{sector.id}}">Editar</a>
+    <a ng-disabled="!existeSector" type="button" class="btn btn-success" ng-href="#!/editarSector/{{sector.id}}">Editar</a>
 
-<button ng-disabled="!existeSector" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+    <button ng-disabled="!existeSector" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+</div>
+
+
+<div class="col-md-6">
+    <input class="searchBar" type="text" ng-model="query" placeholder="Search...">
+</div>
 
 <table class="table">
     <thead>
@@ -15,9 +22,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-class="{selected: filaSeleccionada(sector)}" ng-click="seleccionarFila(sector)" ng-repeat="sector in sectores.data">
+    <tr ng-class="{selected: filaSeleccionada(sector)}" ng-click="seleccionarFila(sector)" ng-repeat="sector in sectores.data | filter:query">
         <td>{{sector.nombre}} </td>
-        <td>{{getNombreZona(sector.idZona)}} </td>
+        <td>{{getNombreZona(sector.idZona,sector)}}{{sector.nombreZona}} </td>
     </tr>
 
     <!-- Modal -->

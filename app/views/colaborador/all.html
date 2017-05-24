@@ -1,10 +1,16 @@
 <h1>Donativos</h1>
 
-<a type="button" class="btn btn-primary" ng-href="#!/nuevoColaborador">Añadir</a>
+<div class="col-md-6">
+    <a type="button" class="btn btn-primary" ng-href="#!/nuevoColaborador">Añadir</a>
 
-<a ng-disabled="!existeColaborador" type="button" class="btn btn-success" ng-href="#!/editarColaborador/{{colaborador.id}}">Editar</a>
+    <a ng-disabled="!existeColaborador" type="button" class="btn btn-success" ng-href="#!/editarColaborador/{{colaborador.id}}">Editar</a>
 
-<button ng-disabled="!existeColaborador" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+    <button ng-disabled="!existeColaborador" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+</div>
+
+<div class="col-md-6">
+    <input class="searchBar" type="text" ng-model="query" placeholder="Search...">
+</div>
 
 <table class="table">
     <thead>
@@ -16,7 +22,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-class="{selected: filaSeleccionada(colaborador)}" ng-click="seleccionarFila(colaborador)" ng-repeat="colaborador in colaboradores.data">
+    <tr ng-class="{selected: filaSeleccionada(colaborador)}" ng-click="seleccionarFila(colaborador)" ng-repeat="colaborador in colaboradores.data | filter:query">
         <td>{{colaborador.nombre}} {{colaborador.apellidoPaterno}} {{colaborador.apellidoMaterno}} </td>
         <td>{{colaborador.telefonoCelular}} </td>
         <td>{{colaborador.correo}}</td>

@@ -6,3 +6,7 @@ tbody > tr:hover{
 .selected{
     background-color:#bdc3c7;
 }
+
+.searchBar {
+    width: 95% !important;
+}

@@ -1,11 +1,18 @@
 
 <h1>Colonias</h1>
 
-<a type="button" class="btn btn-primary" ng-href="#!/nuevaColonia">Añadir</a>
+<div class="col-md-6">
+    <a type="button" class="btn btn-primary" ng-href="#!/nuevaColonia">Añadir</a>
 
-<a ng-disabled="!existeCoolonia" type="button" class="btn btn-success" ng-href="#!/editarColonia/{{colonia.id}}">Editar</a>
+    <a ng-disabled="!existeCoolonia" type="button" class="btn btn-success" ng-href="#!/editarColonia/{{colonia.id}}">Editar</a>
 
-<button ng-disabled="!existeCoolonia" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+    <button ng-disabled="!existeCoolonia" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+</div>
+
+
+<div class="col-md-6">
+    <input class="searchBar" type="text" ng-model="query" placeholder="Search...">
+</div>
 
 <table class="table">
     <thead>
@@ -15,9 +22,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-class="{selected: filaSeleccionada(colonia)}" ng-click="seleccionarFila(colonia)" ng-repeat="colonia in colonias.data">
+    <tr ng-class="{selected: filaSeleccionada(colonia)}" ng-click="seleccionarFila(colonia)" ng-repeat="colonia in colonias.data | filter:query">
         <td>{{colonia.nombre}} </td>
-        <td>{{getNombreSector(colonia.idSector)}} </td>
+        <td>{{getNombreSector(colonia.idSector,colonia)}}{{colonia.nombreSector}} </td>
     </tr>
 
     <!-- Modal -->

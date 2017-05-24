@@ -9,7 +9,6 @@
  */
 angular.module('donativosApp')
   .controller('AportacionCtrl', function (aportacion, $scope, bienhechor) {
-      
       $scope.existeAportacion=false;
       aportacion.all()
           .then(function(data){
@@ -21,11 +20,11 @@ angular.module('donativosApp')
               $scope.bienhechores = data.data;
           });
 
-      $scope.nombreBienhechor=function(idBienhechor){
+      $scope.nombreBienhechor=function(idBienhechor, aportacion){
           if($scope.bienhechores!=undefined){
               for(var i=0;i<$scope.bienhechores.length;i++){
                   if(idBienhechor==$scope.bienhechores[i].id)
-                      return $scope.bienhechores[i].nombre+" "+$scope.bienhechores[i].apellidoPaterno;
+                      aportacion.nombreBienhechor= $scope.bienhechores[i].nombre+" "+$scope.bienhechores[i].apellidoPaterno;
               }
           }
       };

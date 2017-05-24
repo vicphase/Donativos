@@ -127,10 +127,15 @@ angular
         controllerAs: 'nuevoDonativo'
       })
       .when('/editarDonativo/:id', {
-        templateUrl: 'views/donativo/edit.html',
-        controller: 'EditardonativoCtrl',
-        controllerAs: 'editarDonativo'
-      })
+            templateUrl: 'views/donativo/edit.html',
+            controller: 'EditardonativoCtrl',
+            controllerAs: 'editarDonativo'
+        })
+        .when('/reportes', {
+            templateUrl: 'views/reportes/reportes.html',
+            controller: 'ReportesCtrl',
+            controllerAs: 'reportes'
+        })
       .otherwise({
         redirectTo: '/'
       });

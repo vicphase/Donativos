@@ -20,11 +20,11 @@ angular.module('donativosApp')
               $scope.bienhechores = data.data;
           });
 
-      $scope.nombreBienhechor=function(idBienhechor){
+      $scope.nombreBienhechor=function(idBienhechor,donativo){
           if($scope.bienhechores!=undefined){
               for(var i=0;i<$scope.bienhechores.length;i++){
                   if(idBienhechor==$scope.bienhechores[i].id)
-                      return $scope.bienhechores[i].nombre+" "+$scope.bienhechores[i].apellidoPaterno;
+                      donativo.nombreBienhechor=$scope.bienhechores[i].nombre+" "+$scope.bienhechores[i].apellidoPaterno;
               }
           }
       };
@@ -34,11 +34,11 @@ angular.module('donativosApp')
               $scope.colaboradores = data.data;
           });
 
-      $scope.nombreColaborador=function(idColaborador){
+      $scope.nombreColaborador=function(idColaborador,donativo){
           if($scope.colaboradores!=undefined){
               for(var i=0;i<$scope.colaboradores.length;i++){
                   if(idColaborador==$scope.colaboradores[i].id)
-                      return $scope.colaboradores[i].nombre+" "+$scope.colaboradores[i].apellidoPaterno;
+                      donativo.nombreColaborador=$scope.colaboradores[i].nombre+" "+$scope.colaboradores[i].apellidoPaterno;
               }
           }
       };
