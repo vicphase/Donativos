@@ -1,3 +1,4 @@
+<h1>Donativos</h1>
 <a type="button" class="btn btn-primary" ng-href="#!/nuevoDonativo">Añadir</a>
 
 <a type="button" class="btn btn-success" ng-href="#!/editarDonativo/{{donativo.id}}">Editar</a>
@@ -7,48 +8,24 @@
 <table class="table">
     <thead>
     <tr>
-        <th>fecha/th>
-    </tr>
-	<tr>
-        <th>concepto</th>
-    </tr>
-	<tr>
-        <th>monto</th>
-    </tr>
-	<tr>
-        <th>folioRecibo</th>
-    </tr>
-     <tr>
-        <th>referencia</th>
-    </tr>
-    <tr>
-        <th>idBienhechor</th>
-    </tr>
-	<tr>
-        <th>idColaborador</th>
+        <th>Fecha</th>
+
+        <th>Folio</th>
+
+        <th>Monto</th>
+
+        <th>Bienhechor</th>
+
+        <th>Colaborador</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data">
-        <td>{{donativo.fecha}} </td>
-    </tr>
-	  <tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data">
-        <td>{{donativo.concepto}} </td>
-    </tr>
-	  <tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data">
-        <td>{{donativo.monto}} </td>
-    </tr>
-	  <tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data">
-        <td>{{donativo.folioRecibo}} </td>
-    </tr>
-	  <tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data">
-        <td>{{donativo.referencia}} </td>
-    </tr>
-	  <tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data">
-        <td>{{donativo.idBienhechor}} </td>
-    </tr>
-	<tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data">
-        <td>{{donativo.idColaborador}} </td>
+        <td>{{donativo.fecha}}</td>
+        <td>{{donativo.folioRecibo}}</td>
+        <td>${{donativo.monto}}</td>
+        <td>{{nombreBienhechor(donativo.idBienhechor)}}</td>
+        <td>{{nombreColaborador(donativo.idColaborador)}}</td>
     </tr>
 
     <!-- Modal -->
@@ -66,7 +43,7 @@
                 </div>
                 <div class="modal-footer">
                     <button ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button ng-click=" closeModal(); eliminarZona()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
+                    <button ng-click=" closeModal(); eliminarDonativo()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
                 </div>
             </div>
         </div>
