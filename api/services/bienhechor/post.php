@@ -18,6 +18,7 @@ $bienHechor->setApellidoPaterno($json->apellidoPaterno);
 $bienHechor->setApellidoMaterno($json->apellidoMaterno);
 $bienHechor->setCalle($json->calle);
 $bienHechor->setNumero($json->numero);
+$bienHechor->setIdColonia($json->idColonia);
 $bienHechor->setCiudad($json->ciudad);
 $bienHechor->setEstado($json->estado);
 $bienHechor->setTelefonoLocal($json->telefonoLocal);

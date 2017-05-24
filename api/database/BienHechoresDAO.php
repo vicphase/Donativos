@@ -37,6 +37,7 @@ class BienHechoresDAO
         $apellidoMaterno=$bienHechor->getApellidoMaterno();
         $calle=$bienHechor->getCalle();
         $numero=$bienHechor->getNumero();
+        $idColonia=$bienHechor->getIdColonia();
         $ciudad=$bienHechor->getCiudad();
         $estado=$bienHechor->getEstado();
         $telefonoLocal=$bienHechor->getTelefonoLocal();
@@ -52,6 +53,7 @@ class BienHechoresDAO
         apellidoMaterno, 
         calle,
         numero,
+        idColonia,
         ciudad, 
         estado, 
         telefonoLocal, 
@@ -64,6 +66,7 @@ class BienHechoresDAO
             ."'".$apellidoMaterno."'".', '
             ."'".$calle."'".', '
             ."'".$numero."'".', '
+            ."'".$idColonia."'".', '
             ."'".$ciudad."'".', '
             ."'".$estado."'".', '
             ."'".$telefonoLocal."'".', '
@@ -82,13 +85,13 @@ class BienHechoresDAO
         $apellidoMaterno=$bienHechor->getApellidoMaterno();
         $calle=$bienHechor->getCalle();
         $numero=$bienHechor->getNumero();
+        $idColonia=$bienHechor->getIdColonia();
         $ciudad=$bienHechor->getCiudad();
         $estado=$bienHechor->getEstado();
         $telefonoLocal=$bienHechor->getTelefonoLocal();
         $telefonoCelular=$bienHechor->getTelefonoCelular();
         $correo=$bienHechor->getCorreo();
         $fechaNacimiento=$bienHechor->getFechaNacimiento();
-        $frecuenciaDonativo=$bienHechor->getFrecuenciaDonativo();
         $nicho=$bienHechor->getNicho();
 
         DBClass::query("UPDATE bienhechor
@@ -97,6 +100,7 @@ class BienHechoresDAO
         apellidoMaterno="."'".$apellidoMaterno."',
         calle="."'".$calle."',
         numero="."'".$numero."',
+        idColonia="."'".$idColonia."',
         ciudad="."'".$ciudad."',
         estado="."'".$estado."',
         telefonoLocal="."'".$telefonoLocal."',
