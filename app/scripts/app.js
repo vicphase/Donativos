@@ -56,6 +56,11 @@ angular
         controller: 'NuevocolaboradorCtrl',
         controllerAs: 'nuevoColaborador'
       })
+      .when('/zona', {
+        templateUrl: 'views/zona/all.html',
+        controller: 'ZonaCtrl',
+        controllerAs: 'zona'
+      })
       .otherwise({
         redirectTo: '/'
       });

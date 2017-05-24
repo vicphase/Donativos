@@ -2,50 +2,49 @@
 
 /**
  * @ngdoc service
- * @name donativosApp.colaboradores
+ * @name donativosApp.zona
  * @description
- * # colaboradores
+ * # zona
  * Service in the donativosApp.
  */
 angular.module('donativosApp')
-  .service('colaboradores', function ($http) {
+  .service('zona', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
     return {
       all: function () {
-        return $http({method: 'GET', url: '../api/services/colaboradores/getAll.php'});
+        return $http({method: 'GET', url: '../api/services/zona/getAll.php'});
       },
       get: function (id) {
         return $http({
           method: 'POST',
-          url: '../api/services/colaboradores/get.php',
+          url: '../api/services/zona/get.php',
           data: id,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
       },
-      post: function (colaborador) {
+      post: function (zona) {
         return $http({
           method: 'POST',
-          url: '../api/services/colaboradores/post.php',
-          data: colaborador,
+          url: '../api/services/zona/post.php',
+          data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
       },
-      update: function (colaborador) {
+      update: function (zona) {
         return $http({
           method: 'UPDATE',
-          url: '../api/services/colaboradores/update.php',
-          data: colaborador,
+          url: '../api/services/zona/update.php',
+          data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
       },
-      delete: function (colaborador) {
+      delete: function (zona) {
         return $http({
           method: 'DELETE',
-          url: '../api/services/colaboradoresR/delete.php',
-          data: colaborador,
+          url: '../api/services/zona/delete.php',
+          data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
       }
-
     };
   });
