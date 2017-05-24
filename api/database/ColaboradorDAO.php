@@ -9,7 +9,7 @@ class ColaboradorDAO
     {
         $colaboradores = array();
 
-        $db_colaboradores = DBClass::query('SELECT * FROM colaboradores');
+        $db_colaboradores = DBClass::query('SELECT * FROM colaborador');
 
         $n = mysqli_num_rows($db_colaboradores);
 
@@ -19,6 +19,18 @@ class ColaboradorDAO
         }
         return $colaboradores;
     }
+
+    public static function getColaborador()
+    {
+
+        $db_colaboradores = DBClass::query('SELECT * FROM colaborador');
+        
+        
+            $tupla = mysqli_fetch_array($db_colaboradores, MYSQLI_ASSOC);
+
+        return $tupla;
+    }
+
 
     public static function postColaborador(Colaborador $Colaborador)
     {
@@ -37,7 +49,7 @@ class ColaboradorDAO
         $rol=$Colaborador->getRol();
         $idUsuario=$Colaborador->getIdusuario();
 
-        DBClass::query("INSERT INTO colaboradores 
+        DBClass::query("INSERT INTO colaborador
         (nombre,
         apellidoPaterno, 
         apellidoMaterno, 
@@ -66,8 +78,9 @@ class ColaboradorDAO
             ."'".$idUsuario."'".")");
     }
 
-    public static function updateColaborador($Colaborador){
+    public static function updateColaborador(Colaborador $Colaborador){
 
+        $id=$Colaborador->getId();
         $nombre=$Colaborador->getNombre();
         $apellidoPaterno=$Colaborador->getApellidoPaterno();
         $apellidoMaterno=$Colaborador->getApellidoMaterno();
@@ -101,7 +114,7 @@ class ColaboradorDAO
     }
 
     public static function deleteColaborador($id){
-        DBClass::query("DELETE FROM colaboradores 
+        DBClass::query("DELETE FROM colaborador
           WHERE id=".$id);
     }
 }

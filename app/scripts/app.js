@@ -71,6 +71,11 @@ angular
             controller: 'EditarcoloniaCtrl',
             controllerAs: 'editarColonia'
         })
+      .when('/colaborador', {
+        templateUrl: 'views/colaborador.html',
+        controller: 'ColaboradorCtrl',
+        controllerAs: 'colaborador'
+      })
       .otherwise({
         redirectTo: '/'
       });
