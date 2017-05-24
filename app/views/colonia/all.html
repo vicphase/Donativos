@@ -1,0 +1,42 @@
+<a type="button" class="btn btn-primary" ng-href="#!/nuevaColonia">Añadir</a>
+
+<a type="button" class="btn btn-success" ng-href="#!/editarColonia/{{colonia.id}}">Editar</a>
+
+<button ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Sector</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-class="{selected: filaSeleccionada(colonia)}" ng-click="seleccionarFila(colonia)" ng-repeat="colonia in colonias.data">
+        <td>{{colonia.nombre}} </td>
+        <td>{{getNombreSector(colonia.idSector)}} </td>
+    </tr>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Eliminar colonia</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{modalMessage}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button ng-click=" closeModal(); eliminarColonia()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </tbody>
+</table>

@@ -1,7 +1,7 @@
 <form class="well form-horizontal" role="form" data-toggle="validator" id="myForm">
     <fieldset>
         <!-- Form Name -->
-        <legend>Añadir sector</legend>
+        <legend>Añadir colonia</legend>
 
         <!-- Text input-->
 
@@ -10,7 +10,7 @@
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input required ng-model="sector.nombre" name="nombre" placeholder="Nombre" class="form-control"
+                    <input required ng-model="colonia.nombre" name="nombre" placeholder="Nombre" class="form-control"
                            type="text">
                 </div>
             </div>
@@ -19,12 +19,12 @@
         <!-- Select-->
 
         <div class="form-group">
-            <label class="col-md-4 control-label">Zona</label>
+            <label class="col-md-4 control-label">Sector</label>
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <select  ng-model="sector.idZona" name="nombre" placeholder="Zona" class="form-control">
-                        <option  value="{{zona.id}}" ng-repeat="zona in zonas.data">{{zona.nombre}}</option>
+                    <select  ng-model="colonia.idSector" name="sector" placeholder="sector" class="form-control">
+                        <option  value="{{sector.id}}" ng-repeat="sector in sectores.data">{{sector.nombre}}</option>
                     </select>
 
                 </div>
@@ -46,7 +46,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3 class="modal-title">Agregar sector</h3>
+                        <h3 class="modal-title">Agregar colonia</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="modal-footer">
                         <button data-dismiss="modal" aria-label="Close" type="button" class="btn btn-secondary">Cancelar</button>
-                        <a ng-href="#!/sector" ng-click="closeCancelModal()" type="button" class="btn btn-primary btn-danger" >Continuar</a>
+                        <a ng-href="#!/colonia" ng-click="closeCancelModal()" type="button" class="btn btn-primary btn-danger" >Continuar</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3 class="modal-title">Editar sector</h3>
+                        <h3 class="modal-title">Editar colonia</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="modal-footer">
                         <button  ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <a ng-href="#!/sector"  ng-click="closeModal(); agregarSector()" type="button" class="btn btn-primary btn-success">Guardar</a>
+                        <a ng-href="#!/colonia"  ng-click="closeModal(); agregarColonia()" type="button" class="btn btn-primary btn-success">Guardar</a>
                     </div>
                 </div>
             </div>
