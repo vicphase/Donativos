@@ -17,7 +17,4 @@ $donativo->setIdbienhechor($json->idBienhechor);
 $donativo->setIdcolaborador($json->idColaborador);
 
 
-
-echo "Updating";
-
 DonativoDAO::updateDonativo($donativo);

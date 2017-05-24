@@ -116,6 +116,21 @@ angular
             controller: 'EditaraportacionCtrl',
             controllerAs: 'editarAportacion'
         })
+      .when('/donativo', {
+        templateUrl: 'views/donativo/all.html',
+        controller: 'DonativoCtrl',
+        controllerAs: 'donativo'
+      })
+      .when('/nuevoDonativo', {
+        templateUrl: 'views/donativo/new.html',
+        controller: 'NuevodonativoCtrl',
+        controllerAs: 'nuevoDonativo'
+      })
+      .when('/editarDonativo/:id', {
+        templateUrl: 'views/donativo/edit.html',
+        controller: 'EditardonativoCtrl',
+        controllerAs: 'editarDonativo'
+      })
       .otherwise({
         redirectTo: '/'
       });

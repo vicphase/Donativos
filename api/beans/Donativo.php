@@ -35,8 +35,8 @@ class Donativo
     {
         $this->id = $id;
     }
-    
-    
+
+
     /**
      * @return mixed
      */
@@ -52,7 +52,7 @@ class Donativo
     {
         $this->fecha = $fecha;
     }
-    
+
     /**
      * @return mixed
      */
@@ -84,7 +84,7 @@ class Donativo
     {
         $this->monto = $monto;
     }
-    
+
     /**
      * @return mixed
      */
@@ -100,8 +100,8 @@ class Donativo
     {
         $this->folioRecibo = $folioRecibo;
     }
-    
-     /**
+
+    /**
      * @return mixed
      */
     public function getReferencia()
@@ -116,8 +116,8 @@ class Donativo
     {
         $this->referencia = $referencia;
     }
-    
-     /**
+
+    /**
      * @return mixed
      */
     public function getIdbienhechor()
@@ -133,7 +133,7 @@ class Donativo
         $this->idBienhechor = $idBienhechor;
     }
 
-     /**
+    /**
      * @return mixed
      */
     public function getIdcolaborador()
@@ -148,6 +148,6 @@ class Donativo
     {
         $this->idColaborador = $idColaborador;
     }
-   
-    
-    
+
+
+}
