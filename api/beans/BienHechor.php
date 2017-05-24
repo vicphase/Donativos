@@ -13,17 +13,16 @@ class BienHechor
     public $nombre;
     public $apellidoPaterno;
     public $apellidoMaterno;
-    public $direccion;
+    public $calle;
+    public $numero;
+    public $idColonia;
     public $ciudad;
     public $estado;
     public $telefonoLocal;
     public $telefonoCelular;
     public $correo;
     public $fechaNacimiento;
-    public $frecuenciaDonativo;
-    public $metodoAportacion;
-    public $zona;
-    public $sector;
+    public $nicho;
 
     /**
      * BienHechor constructor.
@@ -32,21 +31,6 @@ class BienHechor
     {
     }
 
-    /**
-     * @return mixed
-     */
-    public function getApellidoPaterno()
-    {
-        return $this->apellidoPaterno;
-    }
-
-    /**
-     * @param mixed $apellidoPaterno
-     */
-    public function setApellidoPaterno($apellidoPaterno)
-    {
-        $this->apellidoPaterno = $apellidoPaterno;
-    }
 
     /**
      * @return mixed
@@ -80,6 +64,22 @@ class BienHechor
         $this->nombre = $nombre;
     }
 
+     /**
+     * @return mixed
+     */
+    public function getApellidoPaterno()
+    {
+        return $this->apellidoPaterno;
+    }
+
+    /**
+     * @param mixed $apellidoPaterno
+     */
+    public function setApellidoPaterno($apellidoPaterno)
+    {
+        $this->apellidoPaterno = $apellidoPaterno;
+    }
+    
     /**
      * @return mixed
      */
@@ -99,17 +99,49 @@ class BienHechor
     /**
      * @return mixed
      */
-    public function getDireccion()
+    public function getCalle()
     {
-        return $this->direccion;
+        return $this->calle;
     }
 
     /**
-     * @param mixed $direccion
+     * @param mixed $calle
      */
-    public function setDireccion($direccion)
+    public function setCalle($calle)
     {
-        $this->direccion = $direccion;
+        $this->calle = $calle;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param mixed $numero
+     */
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getIdcolonia()
+    {
+        return $this->idColonia;
+    }
+
+    /**
+     * @param mixed $idColonia
+     */
+    public function setIdcolonia($idColonia)
+    {
+        $this->idColonia = $idColonia;
     }
 
     /**
@@ -208,72 +240,21 @@ class BienHechor
     {
         $this->fechaNacimiento = $fechaNacimiento;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getFrecuenciaDonativo()
-    {
-        return $this->frecuenciaDonativo;
-    }
-
-    /**
-     * @param mixed $frecuenciaDonativo
-     */
-    public function setFrecuenciaDonativo($frecuenciaDonativo)
-    {
-        $this->frecuenciaDonativo = $frecuenciaDonativo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getMetodoAportacion()
-    {
-        return $this->metodoAportacion;
-    }
-
-    /**
-     * @param mixed $metodoAportacion
-     */
-    public function setMetodoAportacion($metodoAportacion)
-    {
-        $this->metodoAportacion = $metodoAportacion;
-    }
-    
     
     /**
      * @return mixed
      */
-    public function getZona()
+    public function getNicho()
     {
-        return $this->zona;
+        return $this->nicho;
     }
 
     /**
-     * @param mixed $zona
+     * @param mixed $nicho
      */
-    public function setZona($zona)
+    public function setNicho($nicho)
     {
-        $this->zona = $zona;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSector()
-    {
-        return $this->sector;
-    }
-
-    /**
-     * @param mixed $sector
-     */
-    public function setSector($sector)
-    {
-        $this->sector = $sector;
+        $this->nicho = $nicho;
     }
 
     
-    
-}
