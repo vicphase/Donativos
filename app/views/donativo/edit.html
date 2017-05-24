@@ -12,7 +12,7 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     <input required ng-model="donativo.fecha" name="fecha" placeholder="Fecha" class="form-control"
-                           type="text">
+                           type="date">
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.concepto" name="concepto" placeholder="concepto" class="form-control"
+                         <input required ng-model="donativo.concepto" pattern="[a-zA-Z-]+" name="concepto" placeholder="concepto" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -33,7 +33,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.monto" name="monto" placeholder="Monto" class="form-control"
+                         <input required ng-model="donativo.monto" pattern="[0-9-]+" name="monto" placeholder="Monto" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -44,7 +44,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.folioRecibo" name="folioRecibo" placeholder="Folio Recibo" class="form-control"
+                         <input required ng-model="donativo.folioRecibo" pattern="[0-9-]+" name="folioRecibo" placeholder="Folio Recibo" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -55,7 +55,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.referencia" name="referencia" placeholder="Referencia" class="form-control"
+                         <input required ng-model="donativo.referencia" pattern="[a-zA-Z-]+" name="referencia" placeholder="Referencia" class="form-control"
                            type="text">
                       </div>
                </div>
