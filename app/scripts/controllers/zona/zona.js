@@ -13,6 +13,7 @@ angular.module('donativosApp')
     zona.all()
         .then(function(data){
           $scope.zonas = data;
+            console.log($scope.zonas);
         });
 
     $scope.seleccionarFila=function(zona){

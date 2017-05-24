@@ -6,10 +6,12 @@
  * Time: 9:32 AM
  */
 
-require '../../database/BienHechoresDAO.php';
+require '../../database/ZonaDAO.php';
+
+header("Access-Control-Allow-Origin: *");
 
 $json = json_decode(file_get_contents("php://input"));
 
 $id=$json->id;
 
-BienHechoresDAO::deleteBienHechor($id);
+ZonaDAO::deleteZona($id);

@@ -8,16 +8,15 @@
  * Service in the donativosApp.
  */
 angular.module('donativosApp')
-  .service('zona', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  .service('zona', function ($http) {
     return {
       all: function () {
-        return $http({method: 'GET', url: '../api/services/zona/getAll.php'});
+        return $http({method: 'GET', url: 'http://victorandresmtz.me/Donativos/api/services/zona/getAll.php'});
       },
       get: function (id) {
         return $http({
-          method: 'POST',
-          url: '../api/services/zona/get.php',
+          method: 'GET',
+          url: 'http://victorandresmtz.me/Donativos/api/services/zona/get.php',
           data: id,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
@@ -25,7 +24,7 @@ angular.module('donativosApp')
       post: function (zona) {
         return $http({
           method: 'POST',
-          url: '../api/services/zona/post.php',
+          url: 'http://victorandresmtz.me/Donativos/api/services/zona/post.php',
           data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
@@ -33,7 +32,7 @@ angular.module('donativosApp')
       update: function (zona) {
         return $http({
           method: 'UPDATE',
-          url: '../api/services/zona/update.php',
+          url: 'http://victorandresmtz.me/Donativos/api/services/zona/update.php',
           data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
@@ -41,7 +40,7 @@ angular.module('donativosApp')
       delete: function (zona) {
         return $http({
           method: 'DELETE',
-          url: '../api/services/zona/delete.php',
+          url: 'http://victorandresmtz.me/Donativos/api/services/zona/delete.php',
           data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });

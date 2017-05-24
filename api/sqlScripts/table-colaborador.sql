@@ -12,7 +12,7 @@ CREATE TABLE colaborador(
      telefonoCelular VARCHAR(255) NOT NULL,
      correo VARCHAR(255) NOT NULL,
      rol VARCHAR(255) NOT NULL,
-     idUsuario INT NULL,
+     idUsuario INT NOT NULL,
      PRIMARY KEY (id),
 
         FOREIGN KEY (idColonia)
