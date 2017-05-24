@@ -2,34 +2,28 @@
 
 /**
  * @ngdoc function
- * @name donativosApp.controller:NuevocolaboradorCtrl
+ * @name donativosApp.controller:NuevazonaCtrl
  * @description
- * # NuevocolaboradorCtrl
+ * # NuevazonaCtrl
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('NuevocolaboradorCtrl', function (colaboradores, $scope) {
+  .controller('NuevazonaCtrl', function (zona) {
       
-      $scope.colaborador = {
-          zona:" ",
-          sector:" "
-      };
-      $scope.agregarcolaborador = function () {
-          colaboradores.post($scope.colaborador);
+      $scope.agregarZona = function () {
+          zona.post($scope.zona);
       };
 
 
       $scope.openModal = function () {
           if($scope.formValidate('myForm')){
               $("#editModal").modal();
-              $scope.modalMessage = "¿Seguro que desea añadir a "+$scope.colaborador.nombre
-                  +" "+$scope.colaborador.apellidoPaterno
-                  +" "+$scope.colaborador.apellidoMaterno+"?";
+              $scope.modalMessage = "¿Seguro que desea añadir a "+$scope.zona.nombre;
           }
       };
 
       $scope.openCancelModal = function () {
-          if(!($scope.colaborador === undefined)){
+          if(!($scope.zona === undefined)){
               $("#cancelModal").modal()
               $scope.modalMessage = "Se perderan los cambios datos capturados si cancela";
           }
@@ -58,5 +52,4 @@ angular.module('donativosApp')
           });
           return result;
       }
-
   });

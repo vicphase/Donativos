@@ -1,6 +1,6 @@
-<a type="button" class="btn btn-primary" ng-href="#!/nuevoColaborador">Añadir</a>
+<a type="button" class="btn btn-primary" ng-href="#!/nuevaZona">Añadir</a>
 
-<a type="button" class="btn btn-success" ng-href="#!/editarColaborador/{{bienHechor.id}}">Editar</a>
+<a type="button" class="btn btn-success" ng-href="#!/editarZona/{{zona.id}}">Editar</a>
 
 <button ng-click="openModal()" class="btn btn-danger">Eliminar</button>
 
@@ -8,25 +8,11 @@
     <thead>
     <tr>
         <th>Nombre</th>
-        <th>Dirección</th>
-        <th>Teléfono Celular</th>
-        <th>Teléfono de Casa</th>
-        <th>Correo</th>
-        <th>Zona</th>
-        <th>Sector</th>
-        <th>Rol</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-class="{selected: filaSeleccionada(bienHechor)}" ng-click="seleccionarFila(bienHechor)" ng-repeat="bienHechor in bienHechores.data">
-        <td>{{bienHechor.nombre}} {{bienHechor.apellidoPaterno}} {{bienHechor.apellidoMaterno}}</td>
-        <td>{{bienHechor.direccion}}</td>
-        <td>{{bienHechor.telefonoLocal}}</td>
-        <td>{{bienHechor.telefonoCelular}}</td>
-        <td>{{bienHechor.correo}}</td>
-        <td>{{bienHechor.zona}}</td>
-        <td>{{bienHechor.sector}}</td>
-        <td>{{bienHechor.rol}}</td>
+        <td>{{zona.nombre}} </td>
     </tr>
 
     <!-- Modal -->
@@ -34,7 +20,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Eliminar colaborador</h3>
+                    <h3 class="modal-title">Eliminar zonar</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -44,7 +30,7 @@
                 </div>
                 <div class="modal-footer">
                     <button ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button ng-click=" closeModal(); eliminarColaborador()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
+                    <button ng-click=" closeModal(); eliminarZona()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
                 </div>
             </div>
         </div>
