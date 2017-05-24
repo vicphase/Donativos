@@ -1,0 +1,56 @@
+
+<h1>Bienhechores</h1>
+<div class="col-md-6">
+    <a type="button" class="btn btn-primary" ng-href="#!/nuevoBienhechor">Añadir</a>
+
+    <a ng-disabled="!existeBienhechor" type="button" class="btn btn-success" ng-href="#!/editarBienhechor/{{bienhechor.id}}">Editar</a>
+
+    <button ng-disabled="!existeBienhechor" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+</div>
+
+
+<div class="col-md-6">
+    <input class="searchBar" type="text" ng-model="query" placeholder="Search...">
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Celular</th>
+        <th>Correo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-class="{selected: filaSeleccionada(bienhechor)}" ng-click="seleccionarFila(bienhechor)" ng-repeat="bienhechor in bienhechores.data | filter:query">
+        <td>{{bienhechor.nombre}} {{bienhechor.apellidoPaterno}} {{bienhechor.apellidoMaterno}} </td>
+        <td>{{bienhechor.telefonoLocal}}</td>
+        <td>{{bienhechor.telefonoCelular}} </td>
+        <td>{{bienhechor.correo}}</td>
+    </tr>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Eliminar bienhechor</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{modalMessage}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button ng-click=" closeModal(); eliminarBienhechor()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </tbody>
+</table>
+

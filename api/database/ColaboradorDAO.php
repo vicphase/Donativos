@@ -9,7 +9,7 @@ class ColaboradorDAO
     {
         $colaboradores = array();
 
-        $db_colaboradores = DBClass::query('SELECT * FROM colaboradores');
+        $db_colaboradores = DBClass::query('SELECT * FROM colaborador');
 
         $n = mysqli_num_rows($db_colaboradores);
 
@@ -20,6 +20,18 @@ class ColaboradorDAO
         return $colaboradores;
     }
 
+    public static function getColaborador($id)
+    {
+
+        $db_colaboradores = DBClass::query('SELECT * FROM colaborador WHERE id='.$id);
+        
+        
+            $tupla = mysqli_fetch_array($db_colaboradores, MYSQLI_ASSOC);
+
+        return $tupla;
+    }
+
+
     public static function postColaborador(Colaborador $Colaborador)
     {
 
@@ -27,91 +39,82 @@ class ColaboradorDAO
         $apellidoPaterno=$Colaborador->getApellidoPaterno();
         $apellidoMaterno=$Colaborador->getApellidoMaterno();
         $calle=$Colaborador->getCalle();
-        $numeroext=$Colaborador->getNumeroext();
-        $colonia=$Colaborador->getColonia();
+        $numero=$Colaborador->getNumero();
+        $idColonia=$Colaborador->getIdcolonia();
         $ciudad=$Colaborador->getCiudad();
         $estado=$Colaborador->getEstado();
         $telefonoLocal=$Colaborador->getTelefonoLocal();
         $telefonoCelular=$Colaborador->getTelefonoCelular();
         $correo=$Colaborador->getCorreo();
-        $fechaNacimiento=$Colaborador->getFechaNacimiento();
         $rol=$Colaborador->getRol();
-        $zona=$Colaborador->getZona();
-        $sector=$Colaborador->getSector();
+        $idUsuario=$Colaborador->getIdusuario();
 
-        DBClass::query("INSERT INTO colaboradores 
+        DBClass::query("INSERT INTO colaborador
         (nombre,
         apellidoPaterno, 
         apellidoMaterno, 
         calle, 
-        numeroext,
-        colonia,
+        numero,
+        idColonia,
         ciudad,
         estado,
         telefonoLocal, 
         telefonoCelular, 
         correo, 
-        fechaNacimiento,
         rol,
-        zona,
-        sector)
+        idUsuario)
         VALUES ("."'".$nombre."'".', '
         ."'".$apellidoPaterno."'".', '
             ."'".$apellidoMaterno."'".', '
             ."'".$calle."'".', '
-            ."'".$numeroext."'".', '
-            ."'".$colonia."'".', '
+            ."'".$numero."'".', '
+            ."'".$idColonia."'".', '
             ."'".$ciudad."'".', '
             ."'".$estado."'".', '
             ."'".$telefonoLocal."'".', '
             ."'".$telefonoCelular."'".', '
             ."'".$correo."'".', '
-            ."'".$fechaNacimiento."'".', '
             ."'".$rol."'".', '
-            ."'".$zona."'".', '
-            ."'".$sector."'".")");
+            ."'".$idUsuario."'".")");
     }
 
-    public static function updateColaborador($Colaborador){
+    public static function updateColaborador(Colaborador $Colaborador){
 
+        $id=$Colaborador->getId();
         $nombre=$Colaborador->getNombre();
         $apellidoPaterno=$Colaborador->getApellidoPaterno();
         $apellidoMaterno=$Colaborador->getApellidoMaterno();
         $calle=$Colaborador->getCalle();
-        $numeroext=$Colaborador->getNumeroext();
-        $colonia=$Colaborador->getColonia();
+        $numero=$Colaborador->getNumero();
+        $idColonia=$Colaborador->getIdcolonia();
         $ciudad=$Colaborador->getCiudad();
         $estado=$Colaborador->getEstado();
         $telefonoLocal=$Colaborador->getTelefonoLocal();
         $telefonoCelular=$Colaborador->getTelefonoCelular();
         $correo=$Colaborador->getCorreo();
-        $fechaNacimiento=$Colaborador->getFechaNacimiento();
         $rol=$Colaborador->getRol();
-        $zona=$Colaborador->getZona();
-        $sector=$Colaborador->getSector();
+        $idUsuario=$Colaborador->getIdusuario();
 
         DBClass::query("UPDATE colaboradores
         SET nombre="."'".$nombre."',
         apellidoPaterno="."'".$apellidoPaterno."',
         apellidoMaterno="."'".$apellidoMaterno."',
         calle="."'".$calle."',
-        numeroext="."'".$numeroext."',
-        colonia="."'".$colonia."',
+        numero="."'".$numero."',
+        idColonia="."'".$idColonia."',
         ciudad="."'".$ciudad."',
         estado="."'".$estado."',
         telefonoLocal="."'".$telefonoLocal."',
         telefonoCelular="."'".$telefonoCelular."',
         correo="."'".$correo."',
-        fechaNacimiento="."'".$fechaNacimiento."',
         rol="."'".$rol."',
-        zona="."'".$zona."',
-        sector="."'".$sector."'
+        idUsuario="."'".$idUsuario."'
         WHERE id=".$id
         );
     }
 
     public static function deleteColaborador($id){
-        DBClass::query("DELETE FROM colaboradores 
+        DBClass::query("DELETE FROM colaborador
           WHERE id=".$id);
     }
 }

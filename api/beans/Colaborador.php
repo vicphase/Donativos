@@ -8,18 +8,16 @@ class Colaborador
     public $apellidoPaterno;
     public $apellidoMaterno;
     public $calle;
-    public $numeroext;
-    public $colonia;
+    public $numero;
+    public $idColonia;
     public $ciudad;
     public $estado;
     public $telefonoLocal;
     public $telefonoCelular;
     public $correo;
-    public $fechaNacimiento;
     public $rol;
-    public $zona;
-    public $sector;
-    
+    public $idUsuario;
+
 
     /**
      * Colaborador constructor.
@@ -60,10 +58,11 @@ class Colaborador
         $this->nombre = $nombre;
     }
 
-        public function getApellidoPaterno()
+    public function getApellidoPaterno()
     {
         return $this->apellidoPaterno;
     }
+
     /**
      * @param mixed $apellidoPaterno
      */
@@ -71,6 +70,7 @@ class Colaborador
     {
         $this->apellidoPaterno = $apellidoPaterno;
     }
+
     /**
      * @return mixed
      */
@@ -106,35 +106,35 @@ class Colaborador
     /**
      * @return mixed
      */
-    public function getNumeroext()
+    public function getNumero()
     {
-        return $this->numeroext;
+        return $this->numero;
     }
 
     /**
-     * @param mixed $numeroext
+     * @param mixed $numero
      */
-    public function setNumeroext($numeroext)
+    public function setNumero($numero)
     {
-        $this->numeroext = $numeroext;
+        $this->numero = $numero;
     }
-    
-     /**
+
+    /**
      * @return mixed
      */
-    public function getColonia()
+    public function getIdcolonia()
     {
-        return $this->colonia;
+        return $this->idColonia;
     }
 
     /**
-     * @param mixed $colonia
+     * @param mixed $idColonia
      */
-    public function setColonia($colonia)
+    public function setIdcolonia($idColonia)
     {
-        $this->colonia = $colonia;
-    }  
-    
+        $this->idColonia = $idColonia;
+    }
+
     /**
      * @return mixed
      */
@@ -150,7 +150,7 @@ class Colaborador
     {
         $this->ciudad = $ciudad;
     }
-    
+
     /**
      * @return mixed
      */
@@ -166,6 +166,7 @@ class Colaborador
     {
         $this->estado = $estado;
     }
+
     /**
      * @return mixed
      */
@@ -213,25 +214,8 @@ class Colaborador
     {
         $this->correo = $correo;
     }
-    
 
     /**
-     * @return mixed
-     */
-    public function getFechaNacimiento()
-    {
-        return $this->fechaNacimiento;
-    }
-
-    /**
-     * @param mixed $fechaNacimiento
-     */
-    public function setFechaNacimiento($fechaNacimiento)
-    {
-        $this->fechaNacimiento = $fechaNacimiento;
-    }
-    
-        /**
      * @return mixed
      */
     public function getRol()
@@ -246,35 +230,21 @@ class Colaborador
     {
         $this->rol = $rol;
     }
-    
-        /**
+
+    /**
      * @return mixed
      */
-    public function getZona()
+    public function getIdusuario()
     {
-        return $this->zona;
+        return $this->idUsuario;
     }
 
     /**
-     * @param mixed $zona
+     * @param mixed $idUsuario
      */
-    public function setZona($zona)
+    public function setIdusuario($idUsuario)
     {
-        $this->zona = $zona;
-    }
-        /**
-     * @return mixed
-     */
-    public function getSector()
-    {
-        return $this->sector;
+        $this->idUsuario = $idUsuario;
     }
 
-    /**
-     * @param mixed $sector
-     */
-    public function setSector($sector)
-    {
-        $this->sector = $sector;
-    }
 }

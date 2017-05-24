@@ -1,0 +1,254 @@
+
+<form class="well form-horizontal" role="form" data-toggle="validator" id="myForm">
+    <fieldset>
+        <!-- Form Name -->
+        <legend>Añadir colaborador</legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Nombre</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input required ng-model="colaborador.nombre" name="nombre" placeholder="Nombre" class="form-control"
+                           type="text">
+                </div>
+            </div>
+        </div>
+		
+		<div class="form-group">
+            <label class="col-md-4 control-label">Apellido Paterno</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.apellidoPaterno" name="Apellidop" placeholder="Apellido Paterno" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+		
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Apellido Materno</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.apellidoMaterno" name="Apellidom" placeholder="Apellido Materno" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Calle</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.calle" name="Calle" placeholder="Calle" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Numero</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.numero" name="Numero" placeholder="# Numero" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+
+        <!--Zona-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Zona</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <select  ng-model="idZona" name="zona" placeholder="Zona" class="form-control">
+                        <option  value="{{zona.id}}" ng-repeat="zona in zonas">{{zona.nombre}}</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Sector-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Sector</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <select  ng-model="idSector" name="sector" placeholder="Sector" class="form-control">
+                        <option ng-show="sectorEnZona({{sector.idZona}})"  value="{{sector.id}}" ng-repeat="sector in sectores">{{sector.nombre}}</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Colonia-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Colonia</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <select  ng-model="colaborador.idColonia" name="colonia" placeholder="Colonia" class="form-control">
+                        <option ng-show="coloniaEnSector({{colonia.idSector}})"  value="{{colonia.id}}" ng-repeat="colonia in colonias">{{colonia.nombre}}</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Ciudad</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.ciudad" name="Ciudad" placeholder="Ciudad" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+		
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Estado</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.estado" name="Estado" placeholder="Estado" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+		
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Telefono Local</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.telefonoLocal" name="telefonoLocal" placeholder="Telefono Local" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+		
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Telefono Celular</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.telefonoCelular" name="telefonoCelular" placeholder="Telefono Celular" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+		
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Correo</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.correo" name="correo" placeholder="correo" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+		
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Rol</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="colaborador.rol" name="rol" placeholder="rol" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+		
+	    <div class="form-group">
+           <label class="col-md-4 control-label">Usuario</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                         <input required ng-model="usuario.username" name="idUsuario" placeholder="Usuario" class="form-control"
+                           type="text">
+                      </div>
+               </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Contraseña</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input required ng-model="usuario.password" name="idUsuario" placeholder="Contraseña" class="form-control"
+                           type="text">
+                </div>
+            </div>
+        </div>
+		
+		
+
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+                <a ng-click="openCancelModal()" type="button" class="btn btn-danger">Cancelar</a>
+                <button type="submit" ng-click="openModal()" class="btn btn-success">Guardar</button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="cancelModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Agregar colaborador</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{modalMessage}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" aria-label="Close" type="button" class="btn btn-secondary">Cancelar</button>
+                        <a ng-href="#!/colaborador" ng-click="closeCancelModal()" type="button" class="btn btn-primary btn-danger" >Continuar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="editModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Editar colaborador</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{modalMessage}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button  ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <a ng-href="#!/colaborador"  ng-click="closeModal(); agregarColaborador()" type="button" class="btn btn-primary btn-success">Guardar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+<script>
+    $('#myForm').validator()
+</script>

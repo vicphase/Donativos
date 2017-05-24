@@ -1,0 +1,52 @@
+
+<h1>Sectores</h1>
+
+<div class="col-md-6">
+    <a type="button" class="btn btn-primary" ng-href="#!/nuevoSector">Añadir</a>
+
+    <a ng-disabled="!existeSector" type="button" class="btn btn-success" ng-href="#!/editarSector/{{sector.id}}">Editar</a>
+
+    <button ng-disabled="!existeSector" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+</div>
+
+
+<div class="col-md-6">
+    <input class="searchBar" type="text" ng-model="query" placeholder="Search...">
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Zona</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-class="{selected: filaSeleccionada(sector)}" ng-click="seleccionarFila(sector)" ng-repeat="sector in sectores.data | filter:query">
+        <td>{{sector.nombre}} </td>
+        <td>{{getNombreZona(sector.idZona,sector)}}{{sector.nombreZona}} </td>
+    </tr>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Eliminar sector</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{modalMessage}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button ng-click=" closeModal(); eliminarSector()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </tbody>
+</table>

@@ -27,8 +27,8 @@ class DBClass {
         or die ("Error en la consulta:".mysql_error());
         return $statement;
     }
-
-    public static function query($sql) {
+    
+        public static function query($sql) {
          return self::execute($sql);
     }
 

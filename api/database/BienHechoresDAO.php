@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Victor
- * Date: 4/7/2017
- * Time: 4:17 PM
- */
 
 require('DBClass.php');
 
@@ -16,7 +10,7 @@ class BienHechoresDAO
     {
         $bienHechores = array();
 
-        $db_bienHechores = DBClass::query('SELECT * FROM bienhechores');
+        $db_bienHechores = DBClass::query('SELECT * FROM bienhechor');
 
         $n = mysqli_num_rows($db_bienHechores);
 
@@ -29,7 +23,7 @@ class BienHechoresDAO
     
     public static function getBienHechor($id){
         
-        $db_bienHechor = DBClass::query('SELECT * FROM bienhechores WHERE id='.$id);
+        $db_bienHechor = DBClass::query('SELECT * FROM bienhechor WHERE id='.$id);
         $bienHechor = mysqli_fetch_array($db_bienHechor, MYSQLI_ASSOC);
         return $bienHechor;
         
@@ -41,89 +35,85 @@ class BienHechoresDAO
         $nombre=$bienHechor->getNombre();
         $apellidoPaterno=$bienHechor->getApellidoPaterno();
         $apellidoMaterno=$bienHechor->getApellidoMaterno();
-        $direccion=$bienHechor->getDireccion();
+        $calle=$bienHechor->getCalle();
+        $numero=$bienHechor->getNumero();
+        $idColonia=$bienHechor->getIdColonia();
         $ciudad=$bienHechor->getCiudad();
         $estado=$bienHechor->getEstado();
         $telefonoLocal=$bienHechor->getTelefonoLocal();
         $telefonoCelular=$bienHechor->getTelefonoCelular();
         $correo=$bienHechor->getCorreo();
         $fechaNacimiento=$bienHechor->getFechaNacimiento();
-        $frecuenciaDonativo=$bienHechor->getFrecuenciaDonativo();
-        $metodoAportacion=$bienHechor->getMetodoAportacion();
-        $zona=$bienHechor->getZona();
-        $sector=$bienHechor->getSector();
+        $nicho=$bienHechor->getNicho();
+        
 
-        DBClass::query("INSERT INTO bienhechores 
+        DBClass::query("INSERT INTO bienhechor 
         (nombre,
         apellidoPaterno, 
         apellidoMaterno, 
-        direccion, 
+        calle,
+        numero,
+        idColonia,
         ciudad, 
         estado, 
         telefonoLocal, 
         telefonoCelular, 
         correo, 
         fechaNacimiento, 
-        frecuenciaDonativo, 
-        metodoAportacion, 
-        zona, 
-        sector)
+        nicho)
         VALUES ("."'".$nombre."'".', '
         ."'".$apellidoPaterno."'".', '
             ."'".$apellidoMaterno."'".', '
-            ."'".$direccion."'".', '
+            ."'".$calle."'".', '
+            ."'".$numero."'".', '
+            ."'".$idColonia."'".', '
             ."'".$ciudad."'".', '
             ."'".$estado."'".', '
             ."'".$telefonoLocal."'".', '
             ."'".$telefonoCelular."'".', '
             ."'".$correo."'".', '
             ."'".$fechaNacimiento."'".', '
-            ."'".$frecuenciaDonativo."'".', '
-            ."'".$metodoAportacion."'".', '
-            ."'".$zona."'".', '
-            ."'".$sector."'".")");
+            ."'".$nicho."'".")");
 
     }
 
-    public static function updateBienHechor($bienHechor){
+    public static function updateBienHechor(BienHechor $bienHechor){
 
         $id=$bienHechor->getId();
         $nombre=$bienHechor->getNombre();
         $apellidoPaterno=$bienHechor->getApellidoPaterno();
         $apellidoMaterno=$bienHechor->getApellidoMaterno();
-        $direccion=$bienHechor->getDireccion();
+        $calle=$bienHechor->getCalle();
+        $numero=$bienHechor->getNumero();
+        $idColonia=$bienHechor->getIdColonia();
         $ciudad=$bienHechor->getCiudad();
         $estado=$bienHechor->getEstado();
         $telefonoLocal=$bienHechor->getTelefonoLocal();
         $telefonoCelular=$bienHechor->getTelefonoCelular();
         $correo=$bienHechor->getCorreo();
         $fechaNacimiento=$bienHechor->getFechaNacimiento();
-        $frecuenciaDonativo=$bienHechor->getFrecuenciaDonativo();
-        $metodoAportacion=$bienHechor->getMetodoAportacion();
-        $zona=$bienHechor->getZona();
-        $sector=$bienHechor->getSector();
+        $nicho=$bienHechor->getNicho();
 
-        DBClass::query("UPDATE bienhechores
+        DBClass::query("UPDATE bienhechor
         SET nombre="."'".$nombre."',
         apellidoPaterno="."'".$apellidoPaterno."',
         apellidoMaterno="."'".$apellidoMaterno."',
-        direccion="."'".$direccion."',
+        calle="."'".$calle."',
+        numero="."'".$numero."',
+        idColonia="."'".$idColonia."',
         ciudad="."'".$ciudad."',
         estado="."'".$estado."',
         telefonoLocal="."'".$telefonoLocal."',
         telefonoCelular="."'".$telefonoCelular."',
         correo="."'".$correo."',
         fechaNacimiento="."'".$fechaNacimiento."',
-        frecuenciaDonativo="."'".$frecuenciaDonativo."',
-        metodoAportacion="."'".$metodoAportacion."',
-        zona="."'".$zona."',
-        sector="."'".$sector."'
+        nicho="."'".$nicho."'
         WHERE id=".$id
         );
     }
 
     public static function deleteBienHechor($id){
-        DBClass::query("DELETE FROM bienhechores 
+        DBClass::query("DELETE FROM bienhechor
           WHERE id=".$id);
     }
 

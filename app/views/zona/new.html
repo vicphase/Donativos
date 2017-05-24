@@ -1,0 +1,75 @@
+<form class="well form-horizontal" role="form" data-toggle="validator" id="myForm">
+    <fieldset>
+        <!-- Form Name -->
+        <legend>Añadir zona</legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Nombre</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input required ng-model="zona.nombre" name="nombre" pattern="[a-zA-Z-]+" placeholder="Nombre" class="form-control"
+                           type="text">
+                </div>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+                <a ng-click="openCancelModal()" type="button" class="btn btn-danger">Cancelar</a>
+                <button type="submit" ng-click="openModal()" class="btn btn-success">Guardar</button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="cancelModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Agregar zona</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{modalMessage}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" aria-label="Close" type="button" class="btn btn-secondary">Cancelar</button>
+                        <a ng-href="#!/zona" ng-click="closeCancelModal()" type="button" class="btn btn-primary btn-danger" >Continuar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="editModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Editar zona</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{modalMessage}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button  ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <a ng-href="#!/zona"  ng-click="closeModal(); zona()" type="button" class="btn btn-primary btn-success">Guardar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+<script>
+    $('#myForm').validator()
+</script>

@@ -22,43 +22,121 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-          templateUrl: 'views/bienHechores/all.html',
-          controller: 'BienhechoresCtrl',
-          controllerAs: 'bienHechores'
+          templateUrl: 'views/zona/all.html',
+          controller: 'ZonaCtrl',
+          controllerAs: 'zona'
       })
-      .when('/bienHechores', {
-        templateUrl: 'views/bienHechores/all.html',
-        controller: 'BienhechoresCtrl',
-        controllerAs: 'bienHechores'
+      .when('/zona', {
+        templateUrl: 'views/zona/all.html',
+        controller: 'ZonaCtrl',
+        controllerAs: 'zona'
       })
-      .when('/nuevoBienHechor', {
-        templateUrl: 'views/bienHechores/new.html',
+        .when('/nuevaZona', {
+            templateUrl: 'views/zona/new.html',
+            controller: 'NuevazonaCtrl',
+            controllerAs: 'nuevaZona'
+        })
+        .when('/editarZona/:id', {
+            templateUrl: 'views/zona/edit.html',
+            controller: 'EditarzonaCtrl',
+            controllerAs: 'editarZona'
+        })
+      .when('/sector', {
+        templateUrl: 'views/sector/all.html',
+        controller: 'SectorCtrl',
+        controllerAs: 'sector'
+      })
+        .when('/nuevoSector', {
+            templateUrl: 'views/sector/new.html',
+            controller: 'NuevosectorCtrl',
+            controllerAs: 'nuevoSector'
+        })
+        .when('/editarSector/:id', {
+            templateUrl: 'views/sector/edit.html',
+            controller: 'EditarsectorCtrl',
+            controllerAs: 'editarSector'
+        })
+      .when('/colonia', {
+        templateUrl: 'views/colonia/all.html',
+        controller: 'ColoniaCtrl',
+        controllerAs: 'colonia'
+      })
+        .when('/nuevaColonia', {
+            templateUrl: 'views/colonia/new.html',
+            controller: 'NuevacoloniaCtrl',
+            controllerAs: 'nuevaColonia'
+        })
+        .when('/editarColonia/:id', {
+            templateUrl: 'views/colonia/edit.html',
+            controller: 'EditarcoloniaCtrl',
+            controllerAs: 'editarColonia'
+        })
+      .when('/colaborador', {
+            templateUrl: 'views/colaborador/all.html',
+            controller: 'ColaboradorCtrl',
+            controllerAs: 'colaborador'
+        })
+        .when('/nuevoColaborador', {
+            templateUrl: 'views/colaborador/new.html',
+            controller: 'NuevocolaboradorCtrl',
+            controllerAs: 'nuevoColaborador'
+        })
+        .when('/editarColaborador/:id', {
+            templateUrl: 'views/colaborador/edit.html',
+            controller: 'EditarcolaboradorCtrl',
+            controllerAs: 'editarColaborador'
+        })
+      .when('/bienhechor', {
+        templateUrl: 'views/bienhechor/all.html',
+        controller: 'BienhechorCtrl',
+        controllerAs: 'bienhechor'
+      })
+      .when('/nuevoBienhechor', {
+        templateUrl: 'views/bienhechor/new.html',
         controller: 'NuevobienhechorCtrl',
-        controllerAs: 'nuevoBienHechor'
+        controllerAs: 'nuevobienhechor'
       })
-      .when('/editarBienHechor/:id', {
-        templateUrl: 'views/bienHechores/edit.html',
-        controller: 'EditarbienhechorCtrl',
-        controllerAs: 'editarBienHechor'
+      .when('/editarBienhechor/:id', {
+            templateUrl: 'views/bienhechor/edit.html',
+            controller: 'EditarbienhechorCtrl',
+            controllerAs: 'editarbienhechor'
+        })
+        .when('/aportacion', {
+            templateUrl: 'views/aportacion/all.html',
+            controller: 'AportacionCtrl',
+            controllerAs: 'aportacion'
+        })
+        .when('/nuevaAportacion', {
+            templateUrl: 'views/aportacion/new.html',
+            controller: 'NuevaaportacionCtrl',
+            controllerAs: 'nuevaAportacion'
+        })
+        .when('/editarAportacion/:id', {
+            templateUrl: 'views/aportacion/edit.html',
+            controller: 'EditaraportacionCtrl',
+            controllerAs: 'editarAportacion'
+        })
+      .when('/donativo', {
+        templateUrl: 'views/donativo/all.html',
+        controller: 'DonativoCtrl',
+        controllerAs: 'donativo'
       })
-      .when('/colaboradores', {
-        templateUrl: 'views/colaboradores/all.html',
-        controller: 'ColaboradoresCtrl',
-        controllerAs: 'colaboradores'
+      .when('/nuevoDonativo', {
+        templateUrl: 'views/donativo/new.html',
+        controller: 'NuevodonativoCtrl',
+        controllerAs: 'nuevoDonativo'
       })
-      .when('/editarColaborador/:id', {
-        templateUrl: 'views/colaboradores/edit.html',
-        controller: 'EditarcolaboradorCtrl',
-        controllerAs: 'editarColaborador'
-      })
-      .when('/nuevoColaborador', {
-        templateUrl: 'views/colaboradores/new.html',
-        controller: 'NuevocolaboradorCtrl',
-        controllerAs: 'nuevoColaborador'
-      })
+      .when('/editarDonativo/:id', {
+            templateUrl: 'views/donativo/edit.html',
+            controller: 'EditardonativoCtrl',
+            controllerAs: 'editarDonativo'
+        })
+        .when('/reportes', {
+            templateUrl: 'views/reportes/reportes.html',
+            controller: 'ReportesCtrl',
+            controllerAs: 'reportes'
+        })
       .otherwise({
         redirectTo: '/'
       });
   });
-// hola soy eris
-// hola soy betillo

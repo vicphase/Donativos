@@ -10,6 +10,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -37,26 +38,23 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
       <ul class="nav navbar-nav">
-      <li><a href="#!/altaUsuario"><b>Alta de usuario</b></a></li>
-        <li class=""><a href="#!/bienHechores"><b>Bienhechores</b><span class="sr-only">(current)</span></a></li>
-        <li><a href="#!/colaboradores"><b>Colaboradores</b></a></li>
-        <li><a href="#"><b>Folios recibidos</b></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Reportes</b><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Donativos realizados y faltantes</a></li>
-            <li><a href="#">Recibos entregados</a></li>
-            <li><a href="#">Recolección de donativos</a></li>
-            <li><a href="#">Zonas</a></li>
-          </ul>
-        </li>
+      <li><a href="#!/colaborador"><b>Colaboradores</b></a></li>
+        <li class=""><a href="#!/bienhechor"><b>Bienhechores</b></a></li>
+          <li class=""><a href="#!/aportacion"><b>Aportaciones</b></a></li>
+          <li class=""><a href="#!/donativo"><b>Donativos</b></a></li>
+          <li><a href="#!/zona"><b>Zonas</b></a></li>
+          <li><a href="#!/sector"><b>Sectores</b></a></li>
+          <li><a href="#!/colonia"><b>Colonias</b></a></li>
+          <li><a href="#!/reportes"><b>Reportes</b></a></li>
       </ul>
       
       
       <ul class="nav navbar-nav navbar-right" style="margin-top: 8px; margin-right: 100px">
+
       
         <a href="Login.php" class="btn btn-info btn-md">
           <span class="glyphicon glyphicon-log-out" ></span> <b>Cerrar sesión </b></a>
+
       </ul>
 
 
@@ -89,8 +87,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bower_components/bootstrap-validator/dist/validator.min.js"></script>
+    <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="../bower_components/angular-animate/angular-animate.js"></script>
     <script src="../bower_components/angular-aria/angular-aria.js"></script>
     <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
@@ -99,19 +96,45 @@
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/bootstrap-validator/dist/validator.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/bienhechores.js"></script>
-        <script src="scripts/services/bienhechores.js"></script>
-        <script src="scripts/controllers/nuevobienhechor.js"></script>
-        <script src="scripts/controllers/editarbienhechor.js"></script>
-        <script src="scripts/controllers/colaboradores.js"></script>
-        <script src="scripts/services/colaboradores.js"></script>
-        <script src="scripts/controllers/editarcolaborador.js"></script>
-        <script src="scripts/controllers/nuevocolaborador.js"></script>
+        <script src="scripts/services/zona.js"></script>
+        <script src="scripts/controllers/zona/zona.js"></script>
+        <script src="scripts/controllers/zona/nuevazona.js"></script>
+        <script src="scripts/controllers/zona/editarzona.js"></script>
+        <script src="scripts/services/sector.js"></script>
+        <script src="scripts/controllers/sector/sector.js"></script>
+        <script src="scripts/controllers/sector/nuevosector.js"></script>
+        <script src="scripts/controllers/sector/editarsector.js"></script>
+        <script src="scripts/services/colonia.js"></script>
+        <script src="scripts/controllers/colonia/colonia.js"></script>
+        <script src="scripts/controllers/colonia/editarcolonia.js"></script>
+        <script src="scripts/controllers/colonia/nuevacolonia.js"></script>
+        <script src="scripts/services/colaborador.js"></script>
+        <script src="scripts/controllers/colaborador/colaborador.js"></script>
+        <script src="scripts/controllers/colaborador/editarcolaborador.js"></script>
+        <script src="scripts/controllers/colaborador/nuevocolaborador.js"></script>
+        <script src="scripts/services/bienhechor.js"></script>
+        <script src="scripts/controllers/bienhechor/bienhechor.js"></script>
+        <script src="scripts/controllers/bienhechor/nuevobienhechor.js"></script>
+        <script src="scripts/controllers/bienhechor/editarbienhechor.js"></script>
+        <script src="scripts/services/aportacion.js"></script>
+        <script src="scripts/controllers/aportacion/aportacion.js"></script>
+        <script src="scripts/controllers/aportacion/nuevaaportacion.js"></script>
+        <script src="scripts/controllers/aportacion/editaraportacion.js"></script>
+        <script src="scripts/services/donativo.js"></script>
+        <script src="scripts/controllers/donativo/donativo.js"></script>
+        <script src="scripts/controllers/donativo/nuevodonativo.js"></script>
+        <script src="scripts/controllers/donativo/editardonativo.js"></script>
+        <script src="scripts/controllers/reportes/reportes.js"></script>
+        <script src="scripts/services/usuario.js"></script>
+
+
         <!-- endbuild -->
 </body>
 </html>
