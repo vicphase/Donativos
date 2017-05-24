@@ -10,7 +10,7 @@ class BienHechoresDAO
     {
         $bienHechores = array();
 
-        $db_bienHechores = DBClass::query('SELECT * FROM bienhechores');
+        $db_bienHechores = DBClass::query('SELECT * FROM bienhechor');
 
         $n = mysqli_num_rows($db_bienHechores);
 
@@ -23,7 +23,7 @@ class BienHechoresDAO
     
     public static function getBienHechor($id){
         
-        $db_bienHechor = DBClass::query('SELECT * FROM bienhechores WHERE id='.$id);
+        $db_bienHechor = DBClass::query('SELECT * FROM bienhechor WHERE id='.$id);
         $bienHechor = mysqli_fetch_array($db_bienHechor, MYSQLI_ASSOC);
         return $bienHechor;
         
@@ -46,7 +46,7 @@ class BienHechoresDAO
         $nicho=$bienHechor->getNicho();
         
 
-        DBClass::query("INSERT INTO bienhechores 
+        DBClass::query("INSERT INTO bienhechor 
         (nombre,
         apellidoPaterno, 
         apellidoMaterno, 
@@ -74,7 +74,7 @@ class BienHechoresDAO
 
     }
 
-    public static function updateBienHechor($bienHechor){
+    public static function updateBienHechor(BienHechor $bienHechor){
 
         $id=$bienHechor->getId();
         $nombre=$bienHechor->getNombre();
@@ -91,7 +91,7 @@ class BienHechoresDAO
         $frecuenciaDonativo=$bienHechor->getFrecuenciaDonativo();
         $nicho=$bienHechor->getNicho();
 
-        DBClass::query("UPDATE bienhechores
+        DBClass::query("UPDATE bienhechor
         SET nombre="."'".$nombre."',
         apellidoPaterno="."'".$apellidoPaterno."',
         apellidoMaterno="."'".$apellidoMaterno."',
@@ -109,7 +109,7 @@ class BienHechoresDAO
     }
 
     public static function deleteBienHechor($id){
-        DBClass::query("DELETE FROM bienhechores 
+        DBClass::query("DELETE FROM bienhechor
           WHERE id=".$id);
     }
 

@@ -64,7 +64,7 @@ class BienHechor
         $this->nombre = $nombre;
     }
 
-     /**
+    /**
      * @return mixed
      */
     public function getApellidoPaterno()
@@ -79,7 +79,7 @@ class BienHechor
     {
         $this->apellidoPaterno = $apellidoPaterno;
     }
-    
+
     /**
      * @return mixed
      */
@@ -111,7 +111,7 @@ class BienHechor
     {
         $this->calle = $calle;
     }
-    
+
     /**
      * @return mixed
      */
@@ -127,7 +127,7 @@ class BienHechor
     {
         $this->numero = $numero;
     }
-    
+
     /**
      * @return mixed
      */
@@ -223,7 +223,7 @@ class BienHechor
     {
         $this->correo = $correo;
     }
-    
+
 
     /**
      * @return mixed
@@ -240,7 +240,7 @@ class BienHechor
     {
         $this->fechaNacimiento = $fechaNacimiento;
     }
-    
+
     /**
      * @return mixed
      */
@@ -257,4 +257,4 @@ class BienHechor
         $this->nicho = $nicho;
     }
 
-    
+}
