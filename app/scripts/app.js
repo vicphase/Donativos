@@ -72,10 +72,20 @@ angular
             controllerAs: 'editarColonia'
         })
       .when('/colaborador', {
-        templateUrl: 'views/colaborador.html',
-        controller: 'ColaboradorCtrl',
-        controllerAs: 'colaborador'
-      })
+            templateUrl: 'views/colaborador/all.html',
+            controller: 'ColaboradorCtrl',
+            controllerAs: 'colaborador'
+        })
+        .when('/nuevoColaborador', {
+            templateUrl: 'views/colaborador/new.html',
+            controller: 'NuevocolaboradorCtrl',
+            controllerAs: 'nuevoColaborador'
+        })
+        .when('/editarColaborador/:id', {
+            templateUrl: 'views/colaborador/edit.html',
+            controller: 'EditarcolaboradorCtrl',
+            controllerAs: 'editarColaborador'
+        })
       .otherwise({
         redirectTo: '/'
       });
