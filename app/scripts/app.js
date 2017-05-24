@@ -41,6 +41,21 @@ angular
             controller: 'EditarzonaCtrl',
             controllerAs: 'editarZona'
         })
+      .when('/sector', {
+        templateUrl: 'views/sector/all.html',
+        controller: 'SectorCtrl',
+        controllerAs: 'sector'
+      })
+        .when('/nuevoSector', {
+            templateUrl: 'views/sector/new.html',
+            controller: 'NuevosectorCtrl',
+            controllerAs: 'nuevoSector'
+        })
+        .when('/editarSector/:id', {
+            templateUrl: 'views/sector/edit.html',
+            controller: 'EditarsectorCtrl',
+            controllerAs: 'editarSector'
+        })
       .otherwise({
         redirectTo: '/'
       });
