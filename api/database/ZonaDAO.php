@@ -50,18 +50,24 @@ class ZonaDAO
 
     }
 
-    public static function updateZona($zona){
+    public static function updateZona(Zona $zona){
 
         $id=$zona->getId();
-        
         $nombre=$zona->getNombre();
         $idLiderZona=$zona->getIdLiderZona();
 
-        DBClass::query("UPDATE zona
+        if(is_null($idLiderZona)) {
+            DBClass::query("UPDATE zona
+        SET nombre="."'".$nombre."'
+          WHERE id=".$id);
+        }else{
+            DBClass::query("UPDATE zona
         SET nombre="."'".$nombre."',
         idsector="."'".$idLiderZona."'
-        WHERE id=".$id
-        );
+        WHERE id=".$id);
+        }
+
+
     }
 
     public static function deleteZona($id){
