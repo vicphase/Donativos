@@ -13,6 +13,6 @@ echo ")]}'\n";
 
 $json = json_decode(file_get_contents("php://input"));
 
-$colaborador = BienHechoresDAO::getColaborador($json);
+$colaborador = ColaboradorDAO::getColaborador($json);
 
 echo json_encode($colaborador);

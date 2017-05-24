@@ -8,7 +8,7 @@
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('ColaboradorCtrl', function () {
+  .controller('ColaboradorCtrl', function (colaborador, $scope, colonia) {
       colaborador.all()
           .then(function(data){
               $scope.colaboradores = data;
