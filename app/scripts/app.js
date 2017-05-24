@@ -86,6 +86,21 @@ angular
             controller: 'EditarcolaboradorCtrl',
             controllerAs: 'editarColaborador'
         })
+      .when('/bienhechor', {
+        templateUrl: 'views/bienhechor/all.html',
+        controller: 'BienhechorCtrl',
+        controllerAs: 'bienhechor'
+      })
+      .when('/nuevobienhechor', {
+        templateUrl: 'views/bienhechor/new.html',
+        controller: 'NuevobienhechorCtrl',
+        controllerAs: 'nuevobienhechor'
+      })
+      .when('/editarbienhechor/:id', {
+        templateUrl: 'views/bienhechor/edit.html',
+        controller: 'EditarbienhechorCtrl',
+        controllerAs: 'editarbienhechor'
+      })
       .otherwise({
         redirectTo: '/'
       });
