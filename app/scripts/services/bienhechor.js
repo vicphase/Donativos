@@ -8,7 +8,7 @@
  * Service in the donativosApp.
  */
 angular.module('donativosApp')
-  .service('bienhechor', function () {
+  .service('bienhechor', function ($http) {
     return {
       all: function () {
         return $http({method: 'GET', url: 'http://localhost/Donativos/api/services/bienhechor/getAll.php'});
@@ -34,7 +34,7 @@ angular.module('donativosApp')
       },
       update: function (bienhechor) {
         console.log("Update de bienhechor");
-        console.log(colaborador);
+        console.log(bienhechor);
         return $http({
           method: 'UPDATE',
           url: 'http://localhost/Donativos/api/services/bienhechor/update.php',

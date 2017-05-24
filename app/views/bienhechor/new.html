@@ -1,4 +1,3 @@
-
 <form class="well form-horizontal" role="form" data-toggle="validator" id="myForm">
     <fieldset>
         <!-- Form Name -->
@@ -11,7 +10,7 @@
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input required ng-model="colaborador.nombre" name="nombre" placeholder="Nombre" class="form-control"
+                    <input required ng-model="bienhechor.nombre" name="nombre" placeholder="Nombre" class="form-control"
                            type="text">
                 </div>
             </div>
@@ -22,7 +21,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.apellidoPaterno" name="Apellidop" placeholder="Apellido Paterno" class="form-control"
+                         <input required ng-model="bienhechor.apellidoPaterno" name="Apellidop" placeholder="Apellido Paterno" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -33,7 +32,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.apellidoMaterno" name="Apellidom" placeholder="Apellido Materno" class="form-control"
+                         <input required ng-model="bienhechor.apellidoMaterno" name="Apellidom" placeholder="Apellido Materno" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -44,7 +43,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.calle" name="Calle" placeholder="Calle" class="form-control"
+                         <input required ng-model="bienhechor.calle" name="Calle" placeholder="Calle" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -55,29 +54,61 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.numero" name="Numero" placeholder="# Numero" class="form-control"
+                         <input required ng-model="bienhechor.numero" name="Numero" placeholder="# Numero" class="form-control"
                            type="text">
                       </div>
                </div>
         </div>
-		
-	    <div class="form-group">
-           <label class="col-md-4 control-label">ID Colonia</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.idColonia" name="Colonia" placeholder="Colonia" class="form-control"
-                           type="text">
-                      </div>
-               </div>
+
+        <!--Zona-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Zona</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <select  ng-model="idZona" name="zona" placeholder="Zona" class="form-control">
+                        <option  value="{{zona.id}}" ng-repeat="zona in zonas">{{zona.nombre}}</option>
+                    </select>
+
+                </div>
+            </div>
         </div>
+
+        <!--Sector-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Sector</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <select  ng-model="idSector" name="sector" placeholder="Sector" class="form-control">
+                        <option ng-show="sectorEnZona({{sector.idZona}})"  value="{{sector.id}}" ng-repeat="sector in sectores">{{sector.nombre}}</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Colonia-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Colonia</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <select  ng-model="bienhechor.idColonia" name="colonia" placeholder="Colonia" class="form-control">
+                        <option ng-show="coloniaEnSector({{colonia.idSector}})"  value="{{colonia.id}}" ng-repeat="colonia in colonias">{{colonia.nombre}}</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
 		
 	    <div class="form-group">
            <label class="col-md-4 control-label">Ciudad</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.ciudad" name="Ciudad" placeholder="Ciudad" class="form-control"
+                         <input required ng-model="bienhechor.ciudad" name="Ciudad" placeholder="Ciudad" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -88,7 +119,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.estado" name="Estado" placeholder="Estado" class="form-control"
+                         <input required ng-model="bienhechor.estado" name="Estado" placeholder="Estado" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -99,7 +130,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.telefonoLocal" name="telefonoLocal" placeholder="Telefono Local" class="form-control"
+                         <input required ng-model="bienhechor.telefonoLocal" name="telefonoLocal" placeholder="Telefono Local" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -110,7 +141,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.telefonoCelular" name="telefonoCelular" placeholder="Telefono Celular" class="form-control"
+                         <input required ng-model="bienhechor.telefonoCelular" name="telefonoCelular" placeholder="Telefono Celular" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -121,7 +152,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.correo" name="correo" placeholder="correo" class="form-control"
+                         <input required ng-model="bienhechor.correo" name="correo" placeholder="correo" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -132,7 +163,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.fechaNacimiento"  type="date" name="fechaNacimiento" placeholder="Fecha Nacimiento" class="form-control">
+                         <input required ng-model="bienhechor.fechaNacimiento"  type="date" name="fechaNacimiento" placeholder="Fecha Nacimiento" class="form-control">
                       </div>
                </div>
         </div>
@@ -140,8 +171,8 @@
 	    <div class="form-group">
            <label class="col-md-4 control-label">Nicho</label>
                 <div class="col-md-4 inputGroupContainer">
-                         <label class="checkbox-inline" ng-model><input type="checkbox" value="">Option 1</label>
-                         <label class="checkbox-inline" ng-model><input type="checkbox" value="">Option 2</label>
+                         <label class="checkbox-inline" ><input name="nicho" type="radio" ng-value={{true}} ng-model="bienhechor.nicho">Interesado</label>
+                         <label class="checkbox-inline"><input name="nicho"  type="radio" ng-value={{false}} ng-model="bienhechor.nicho" >No interesado</label>
                       </div>
                </div>
         </div>
@@ -163,7 +194,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3 class="modal-title">Agregar colaborador</h3>
+                        <h3 class="modal-title">Agregar bienhechor</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -184,7 +215,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3 class="modal-title">Editar colaborador</h3>
+                        <h3 class="modal-title">Editar bienhechor</h3>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -194,7 +225,7 @@
                     </div>
                     <div class="modal-footer">
                         <button  ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <a ng-href="#!/colaborador"  ng-click="closeModal(); agregarColaborador()" type="button" class="btn btn-primary btn-success">Guardar</a>
+                        <a ng-href="#!/bienhechor"  ng-click="closeModal(); agregarBienhechor()" type="button" class="btn btn-primary btn-success">Guardar</a>
                     </div>
                 </div>
             </div>

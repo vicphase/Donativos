@@ -91,12 +91,12 @@ angular
         controller: 'BienhechorCtrl',
         controllerAs: 'bienhechor'
       })
-      .when('/nuevobienhechor', {
+      .when('/nuevoBienhechor', {
         templateUrl: 'views/bienhechor/new.html',
         controller: 'NuevobienhechorCtrl',
         controllerAs: 'nuevobienhechor'
       })
-      .when('/editarbienhechor/:id', {
+      .when('/editarBienhechor/:id', {
         templateUrl: 'views/bienhechor/edit.html',
         controller: 'EditarbienhechorCtrl',
         controllerAs: 'editarbienhechor'

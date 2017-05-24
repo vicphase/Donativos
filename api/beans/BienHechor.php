@@ -131,7 +131,7 @@ class BienHechor
     /**
      * @return mixed
      */
-    public function getIdcolonia()
+    public function getIdColonia()
     {
         return $this->idColonia;
     }
@@ -139,7 +139,7 @@ class BienHechor
     /**
      * @param mixed $idColonia
      */
-    public function setIdcolonia($idColonia)
+    public function setIdColonia($idColonia)
     {
         $this->idColonia = $idColonia;
     }

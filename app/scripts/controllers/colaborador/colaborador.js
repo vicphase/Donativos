@@ -8,18 +8,12 @@
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('ColaboradorCtrl', function (colaborador, $scope, colonia) {
+  .controller('ColaboradorCtrl', function (colaborador, $scope) {
       colaborador.all()
           .then(function(data){
               $scope.colaboradores = data;
           });
-
-      colonia.all()
-          .then(function (data) {
-              $scope.colonias=data.data;
-              console.log($scope.colonias);
-          });
-
+      
       $scope.seleccionarFila=function(colaborador){
           $scope.colaborador = colaborador;
       };
