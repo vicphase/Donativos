@@ -5,7 +5,7 @@ class Zona
 
     public $id;
     public $nombre;
-    public $idSector;
+    public $idLiderZona;
     
 
     /**
@@ -50,16 +50,16 @@ class Zona
     /**
      * @return mixed 
      */
-    public function getIdSector()
+    public function getIdLiderZona()
     {
-        return $this->idSector;
+        return $this->idLiderZona;
     }
 
     /**
      * @param mixed $idsector
      */
-    public function setIdSector($idSector)
+    public function setIdLiderZona($idLiderZona)
     {
-        $this->idSector = $idSector;
+        $this->idLiderZona = $idLiderZona;
     }
 }

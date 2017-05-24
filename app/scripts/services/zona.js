@@ -11,12 +11,13 @@ angular.module('donativosApp')
   .service('zona', function ($http) {
     return {
       all: function () {
-        return $http({method: 'GET', url: 'http://victorandresmtz.me/Donativos/api/services/zona/getAll.php'});
+        return $http({method: 'GET', url: 'http://localhost/Donativos/api/services/zona/getAll.php'});
       },
       get: function (id) {
+        console.log("GET "+id);
         return $http({
-          method: 'GET',
-          url: 'http://victorandresmtz.me/Donativos/api/services/zona/get.php',
+          method: 'POST',
+          url: 'http://localhost/Donativos/api/services/zona/get.php',
           data: id,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
@@ -24,7 +25,7 @@ angular.module('donativosApp')
       post: function (zona) {
         return $http({
           method: 'POST',
-          url: 'http://victorandresmtz.me/Donativos/api/services/zona/post.php',
+          url: 'http://localhost/Donativos/api/services/zona/post.php',
           data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
@@ -32,7 +33,7 @@ angular.module('donativosApp')
       update: function (zona) {
         return $http({
           method: 'UPDATE',
-          url: 'http://victorandresmtz.me/Donativos/api/services/zona/update.php',
+          url: 'http://localhost/Donativos/api/services/zona/update.php',
           data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });
@@ -40,7 +41,7 @@ angular.module('donativosApp')
       delete: function (zona) {
         return $http({
           method: 'DELETE',
-          url: 'http://victorandresmtz.me/Donativos/api/services/zona/delete.php',
+          url: 'http://localhost/Donativos/api/services/zona/delete.php',
           data: zona,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });

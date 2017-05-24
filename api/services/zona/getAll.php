@@ -13,6 +13,6 @@ header("Access-Control-Allow-Origin: *");
 header('Content-type: application/json');
 echo ")]}'\n";
 
-$zona = ZonaDAO::getZona();
+$zona = ZonaDAO::getZonas();
 
 echo json_encode($zona);

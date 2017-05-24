@@ -8,7 +8,7 @@
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('NuevazonaCtrl', function (zona) {
+  .controller('NuevazonaCtrl', function (zona, $scope) {
       
       $scope.agregarZona = function () {
           zona.post($scope.zona);
@@ -18,7 +18,7 @@ angular.module('donativosApp')
       $scope.openModal = function () {
           if($scope.formValidate('myForm')){
               $("#editModal").modal();
-              $scope.modalMessage = "¿Seguro que desea añadir a "+$scope.zona.nombre;
+              $scope.modalMessage = "¿Seguro que desea añadir a "+$scope.zona.nombre+"?";
           }
       };
 

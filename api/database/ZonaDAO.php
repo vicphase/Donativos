@@ -6,32 +6,48 @@ class ZonaDAO
 {
 
     public static function getZonas()
+{
+    $zona = array();
+
+    $db_zona = DBClass::query('SELECT * FROM zona');
+    $n = mysqli_num_rows($db_zona);
+
+    for ($i = 0; $i < $n; $i++) {
+        $tupla = mysqli_fetch_array($db_zona, MYSQLI_ASSOC);
+        array_push($zona, $tupla);
+    }
+    return $zona;
+}
+
+    public static function getZona($id)
     {
-        $zona = array();
 
-        $db_zona = DBClass::query('SELECT * FROM zona');
-        echo var_dump($db_zona);
-        $n = mysqli_num_rows($db_zona);
+        $db_zona = DBClass::query('SELECT * FROM zona WHERE id='.$id);
 
-        for ($i = 0; $i < $n; $i++) {
             $tupla = mysqli_fetch_array($db_zona, MYSQLI_ASSOC);
-            array_push($zona, $tupla);
-        }
-        return $zona;
+
+        return $tupla;
     }
 
     public static function postZona(Zona $zona)
     {
 
         $nombre=$zona->getNombre();
-        $idsector=$zona->getIdsector();
+        $idLiderZona=$zona->getIdLiderZona();
         
 
-        DBClass::query("INSERT INTO Zona
+        if(is_null($idLiderZona)){
+            DBClass::query("INSERT INTO zona
+        (nombre)
+        VALUES ("."'".$nombre."'".")");
+        }else{
+            DBClass::query("INSERT INTO zona
         (nombre,
-         idsector
+         idsector)
         VALUES ("."'".$nombre."'".', '
-            ."'".$idsector."'".")");
+                ."'".$idLiderZona."'".")");
+        }
+
     }
 
     public static function updateZona($zona){
@@ -39,17 +55,17 @@ class ZonaDAO
         $id=$zona->getId();
         
         $nombre=$zona->getNombre();
-        $idsector=$zona->getIdsector();
+        $idLiderZona=$zona->getIdLiderZona();
 
-        DBClass::query("UPDATE Zona
+        DBClass::query("UPDATE zona
         SET nombre="."'".$nombre."',
-        idsector="."'".$idsector."'
+        idsector="."'".$idLiderZona."'
         WHERE id=".$id
         );
     }
 
     public static function deleteZona($id){
-        DBClass::query("DELETE FROM Zona 
+        DBClass::query("DELETE FROM zona 
           WHERE id=".$id);
     }
 }
