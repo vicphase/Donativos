@@ -1,4 +1,5 @@
-<a type="button" class="btn btn-primary" ng-href="#!/nuevaAportacion">A�adir</a>
+<h1>Aportación</h1>
+<a type="button" class="btn btn-primary" ng-href="#!/nuevaAportacion">Añadir</a>
 
 <a type="button" class="btn btn-success" ng-href="#!/editarAportacion/{{aportacion.id}}">Editar</a>
 
@@ -7,25 +8,18 @@
 <table class="table">
     <thead>
     <tr>
-        <th>ID frecuencia donativo</th>
-    </tr>
-	<tr>
-        <th>ID Metodo Aportacion</th>
-    </tr>
-	<tr>
-        <th>ID BienHechor</th>
+        <th>Frecuencia mensual</th>
+        <th>Método de aportación</th>
+        <th>Monto</th>
+        <th>Bienhechor</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-class="{selected: filaSeleccionada(aportacion)}" ng-click="seleccionarFila(aportacion)" ng-repeat="aportacion in aportaciones.data">
-        <td>{{aportacion.idFrecuenciaDonativo}} </td>
-    </tr>
-	    <tr ng-class="{selected: filaSeleccionada(aportacion)}" ng-click="seleccionarFila(aportacion)" ng-repeat="aportacion in aportaciones.data">
-        <td>{{aportacion.idMetodoAportacion}} </td>
-    </tr>
-	</tr>
-	    <tr ng-class="{selected: filaSeleccionada(aportacion)}" ng-click="seleccionarFila(aportacion)" ng-repeat="aportacion in aportaciones.data">
-        <td>{{aportacion.idBienhechor}} </td>
+        <td>{{aportacion.frecuenciaMensual}}</td>
+        <td>{{aportacion.metodoAportacion}}</td>
+        <td>${{aportacion.monto}}</td>
+        <td>{{nombreBienhechor(aportacion.idBienhechor)}}</td>
     </tr>
 
     <!-- Modal -->
@@ -33,7 +27,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Eliminar zonar</h3>
+                    <h3 class="modal-title">Eliminar aportacion</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -43,7 +37,7 @@
                 </div>
                 <div class="modal-footer">
                     <button ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button ng-click=" closeModal(); eliminarZona()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
+                    <button ng-click=" closeModal(); eliminarAportacion()" type="button" class="btn btn-primary btn-danger">Eliminar</button>
                 </div>
             </div>
         </div>
