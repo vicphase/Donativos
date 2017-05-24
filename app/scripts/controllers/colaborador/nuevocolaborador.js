@@ -8,11 +8,21 @@
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('NuevocolaboradorCtrl', function ($scope, colaborador, colonia, sector, zona ) {
+  .controller('NuevocolaboradorCtrl', function ($scope, colaborador, colonia, sector, zona, usuario ) {
 
 
       $scope.agregarColaborador = function () {
-          colaborador.post($scope.colaborador);
+          usuario.post($scope.usuario)
+              .then(function(){
+                  usuario.all().
+                      then(function(data){
+                      $scope.usuarios=data.data;
+                      $scope.colaborador.idUsuario=$scope.getIdUsuario($scope.usuario);
+                      colaborador.post($scope.colaborador);
+                  });
+
+              });
+
       };
 
       colonia.all()
@@ -76,5 +86,14 @@ angular.module('donativosApp')
               }
           });
           return result;
+      }
+
+      $scope.getIdUsuario=function(usuario){
+          for(var i=0;i<$scope.usuarios.length;i++){
+              if($scope.usuarios[i].username==usuario.username && $scope.usuarios[i].password==usuario.password){
+                  console.log($scope.usuarios[i].id);
+                  return $scope.usuarios[i].id;
+              }
+          }
       }
   });

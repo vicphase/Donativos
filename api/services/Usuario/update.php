@@ -15,7 +15,7 @@ $usuario = new Usuario();
 
 $usuario->setId($json->id);
 $usuario->setUsername($json->username);
-$password->setPassword($json->password);
+$usuario->setPassword($json->password);
 
 
 UsuarioDAO::updateUsuario($usuario);

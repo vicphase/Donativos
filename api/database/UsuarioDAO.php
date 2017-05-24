@@ -10,7 +10,7 @@ class UsuarioDAO
     {
         $usuarios = array();
 
-        $db_usuarios = DBClass::query('SELECT * FROM aportacion');
+        $db_usuarios = DBClass::query('SELECT * FROM usuario');
 
         $n = mysqli_num_rows($db_usuarios);
 
@@ -21,9 +21,9 @@ class UsuarioDAO
         return $usuarios;
     }
     
-    public static function getUsuario($usuario){
+    public static function getUsuario($id){
         
-        $db_usuario = DBClass::query('SELECT * FROM Usuarios WHERE id='.$id);
+        $db_usuario = DBClass::query('SELECT * FROM usuario WHERE id='.$id);
         $usuario = mysqli_fetch_array($db_usuario, MYSQLI_ASSOC);
         return $usuario;
         
@@ -35,7 +35,7 @@ class UsuarioDAO
         $password=$usuario->getPassword();
 
 
-        DBClass::query("INSERT INTO Usuarios 
+        DBClass::query("INSERT INTO usuario 
         (username,
         password)
         VALUES ("."'".$username."'".', '
@@ -44,11 +44,11 @@ class UsuarioDAO
     }
 
     public static function updateUsuario(Usuario $usuario){
-
+        $id=$usuario->getId();
         $username=$usuario->getUsername();
         $password=$usuario->getPassword();
 
-        DBClass::query("UPDATE Usuario
+        DBClass::query("UPDATE usuario
         SET username="."'".$username."',
         password="."'".$password."'
         WHERE id=".$id
@@ -56,7 +56,7 @@ class UsuarioDAO
     }
 
     public static function deleteUsuario($id){
-        DBClass::query("DELETE FROM Usuario 
+        DBClass::query("DELETE FROM usuario 
           WHERE id=".$id);
     }
 
