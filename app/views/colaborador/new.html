@@ -171,14 +171,25 @@
         </div>
 		
 	    <div class="form-group">
-           <label class="col-md-4 control-label">ID Usuario</label>
+           <label class="col-md-4 control-label">Usuario</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.idUsuario" name="idUsuario" placeholder="idUsuario" class="form-control"
+                         <input required ng-model="usuario.username" name="idUsuario" placeholder="Usuario" class="form-control"
                            type="text">
                       </div>
                </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Contraseña</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input required ng-model="usuario.password" name="idUsuario" placeholder="Contraseña" class="form-control"
+                           type="text">
+                </div>
+            </div>
         </div>
 		
 		

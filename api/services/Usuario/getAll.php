@@ -12,6 +12,6 @@ require '../../database/UsuarioDAO.php';
 header('Content-type: application/json');
 echo ")]}'\n";
 
-$usuarios = UsuarioDAO::getUsuario();
+$usuarios = UsuarioDAO::getUsuarios();
 
 echo json_encode($usuarios);
