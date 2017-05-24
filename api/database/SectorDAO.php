@@ -11,7 +11,6 @@ require('DBClass.php');
 
 class SectorDAO
 {
-
     public static function getSectores()
     {
         $sectores = array();
@@ -41,6 +40,7 @@ class SectorDAO
         $nombre=$sector->getNombre();
         $idzona=$sector->getIdZona();
 
+
         DBClass::query("INSERT INTO Sector 
         (nombre,
         idZona)
@@ -54,6 +54,7 @@ class SectorDAO
         $id=$sector->getId();
         $nombre=$sector->getNombre();
         $idzona=$sector->getIdZona();
+
 
         DBClass::query("UPDATE Sector
         SET nombre="."'".$nombre."',

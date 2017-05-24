@@ -59,13 +59,15 @@ class Sector
     public function getIdZona()
     {
         return $this->idZona;
-    }
+
 
     /**
      * @param mixed $idzona
      */
+
     public function setIdZona($idZona)
     {
         $this->idZona = $idZona;
     }
 }
+

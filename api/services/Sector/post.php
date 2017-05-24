@@ -16,4 +16,5 @@ $sector = new Sector();
 $sector->setNombre($json->nombre);
 $sector->setIdZona($json->idZona);
 
+
 SectorDAO::postSector($sector);
