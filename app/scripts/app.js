@@ -57,10 +57,20 @@ angular
             controllerAs: 'editarSector'
         })
       .when('/colonia', {
-        templateUrl: 'views/colonia.html',
+        templateUrl: 'views/colonia/all.html',
         controller: 'ColoniaCtrl',
         controllerAs: 'colonia'
       })
+        .when('/nuevaColonia', {
+            templateUrl: 'views/colonia/new.html',
+            controller: 'NuevacoloniaCtrl',
+            controllerAs: 'nuevaColonia'
+        })
+        .when('/editarColonia/:id', {
+            templateUrl: 'views/colonia/edit.html',
+            controller: 'EditarcoloniaCtrl',
+            controllerAs: 'editarColonia'
+        })
       .otherwise({
         redirectTo: '/'
       });

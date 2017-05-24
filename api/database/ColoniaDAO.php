@@ -16,7 +16,7 @@ class ColoniaDAO
     {
         $colonias = array();
 
-        $db_colonias = DBClass::query('SELECT * FROM Colonia');
+        $db_colonias = DBClass::query('SELECT * FROM colonia');
 
         $n = mysqli_num_rows($db_colonias);
 
@@ -29,7 +29,7 @@ class ColoniaDAO
     
     public static function getColonia($id){
         
-        $db_colonia = DBClass::query('SELECT * FROM Colonias WHERE id='.$id);
+        $db_colonia = DBClass::query('SELECT * FROM colonia WHERE id='.$id);
         $colonia = mysqli_fetch_array($db_colonia, MYSQLI_ASSOC);
         return $colonia;
         
@@ -39,10 +39,10 @@ class ColoniaDAO
     {
 
         $nombre=$colonia->getNombre();
-        $idsector=$colonia->getIdsector();
+        $idsector=$colonia->getIdSector();
         
         
-        DBClass::query("INSERT INTO Colonia 
+        DBClass::query("INSERT INTO colonia 
         (nombre,
         idSector)
         VALUES ("."'".$nombre."'".', '
@@ -50,13 +50,13 @@ class ColoniaDAO
 
     }
 
-    public static function updateColonia($colonia){
+    public static function updateColonia(Colonia $colonia){
 
         $id=$colonia->getId();
         $nombre=$colonia->getNombre();
-        $idsector=$colonia->getIdsector();
+        $idsector=$colonia->getIdSector();
 
-        DBClass::query("UPDATE Colonia
+        DBClass::query("UPDATE colonia
         SET nombre="."'".$nombre."',
         idSector="."'".$idsector."'
         WHERE id=".$id
@@ -64,7 +64,7 @@ class ColoniaDAO
     }
 
     public static function deleteColonia($id){
-        DBClass::query("DELETE FROM Colonia 
+        DBClass::query("DELETE FROM colonia 
           WHERE id=".$id);
     }
 

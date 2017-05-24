@@ -2,12 +2,10 @@
 
 
 require '../../database/ColoniaDAO.php';
-header("Access-Control-Allow-Origin: *");
-
 
 header('Content-type: application/json');
 echo ")]}'\n";
 
-$colonia = ColoniaDAO::getColonia();
+$colonia = ColoniaDAO::getColonias();
 
 echo json_encode($colonia);

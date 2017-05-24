@@ -11,7 +11,7 @@ class Colonia
 
     public $id;
     public $nombre;
-    public $idsector;
+    public $idSector;
 
     /**
      * Colonia constructor.
@@ -52,20 +52,21 @@ class Colonia
     {
         $this->nombre = $nombre;
     }
-    
+
     /**
      * @return mixed
      */
-    public function getIdsector()
+    public function getIdSector()
     {
-        return $this->idsector;
+        return $this->idSector;
     }
 
     /**
      * @param mixed $idsector
      */
-    public function setIdsector($idsector)
+    public function setIdSector($idSector)
     {
-        $this->idsector = $idsector;
+        $this->idSector = $idSector;
     }
-    
+
+}
