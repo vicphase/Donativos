@@ -20,6 +20,5 @@ $Colaborador->setTelefonoLocal($json->telefonoLocal);
 $Colaborador->setTelefonoCelular($json->telefonoCelular);
 $Colaborador->setCorreo($json->correo);
 $Colaborador->setRol($json->rol);
-$Colaborador->setIdusuario($json->idUsuario);
 
 ColaboradorDAO::updateColaborador($Colaborador);

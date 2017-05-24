@@ -17,7 +17,7 @@ angular.module('donativosApp')
         console.log("GET "+id);
         return $http({
           method: 'POST',
-          url: 'http://localhost/Donativos/api/usuario/zona/get.php',
+          url: 'http://localhost/Donativos/api/services/usuario/get.php',
           data: id,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         });

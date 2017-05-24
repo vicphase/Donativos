@@ -11,7 +11,7 @@
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input required ng-model="colaborador.nombre" name="nombre" placeholder="Nombre" class="form-control"
+                    <input required ng-model="colaborador.nombre" maxlength="15" name="nombre" placeholder="Nombre" class="form-control"
                            type="text">
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.apellidoPaterno" name="Apellidop" placeholder="Apellido Paterno" class="form-control"
+                         <input required ng-model="colaborador.apellidoPaterno" maxlength="15" name="Apellidop" placeholder="Apellido Paterno" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -33,7 +33,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.apellidoMaterno" name="Apellidom" placeholder="Apellido Materno" class="form-control"
+                         <input required ng-model="colaborador.apellidoMaterno" maxlength="15" name="Apellidom" placeholder="Apellido Materno" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -44,18 +44,18 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.calle" name="Calle" placeholder="Calle" class="form-control"
+                         <input required ng-model="colaborador.calle" maxlength="15" name="Calle" placeholder="Calle" class="form-control"
                            type="text">
                       </div>
                </div>
         </div>
 
 	    <div class="form-group">
-           <label class="col-md-4 control-label">Numero</label>
+           <label class="col-md-4 control-label">Número</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.numero" name="Numero" placeholder="# Numero" class="form-control"
+                         <input required ng-model="colaborador.numero" maxlength="15" name="Numero" placeholder="# Numero" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -109,7 +109,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.ciudad" name="Ciudad" placeholder="Ciudad" class="form-control"
+                         <input required ng-model="colaborador.ciudad" name="Ciudad" maxlength="15" placeholder="Ciudad" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -120,29 +120,29 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.estado" name="Estado" placeholder="Estado" class="form-control"
+                         <input required ng-model="colaborador.estado" name="Estado" maxlength="15"  placeholder="Estado" class="form-control"
                            type="text">
                       </div>
                </div>
         </div>
 		
 	    <div class="form-group">
-           <label class="col-md-4 control-label">Telefono Local</label>
+           <label class="col-md-4 control-label">Teléfono Local</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.telefonoLocal" name="telefonoLocal" placeholder="Telefono Local" class="form-control"
+                         <input required ng-model="colaborador.telefonoLocal" maxlength="15" name="telefonoLocal" placeholder="Telefono Local" class="form-control"
                            type="text">
                       </div>
                </div>
         </div>
 		
 	    <div class="form-group">
-           <label class="col-md-4 control-label">Telefono Celular</label>
+           <label class="col-md-4 control-label">Teléfono Celular</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.telefonoCelular" name="telefonoCelular" placeholder="Telefono Celular" class="form-control"
+                         <input required ng-model="colaborador.telefonoCelular" maxlength="15" name="telefonoCelular" placeholder="Telefono Celular" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -153,7 +153,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.correo" name="correo" placeholder="correo" class="form-control"
+                         <input required ng-model="colaborador.correo" maxlength="15" name="correo" placeholder="correo" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -164,7 +164,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="colaborador.rol" name="rol" placeholder="rol" class="form-control"
+                         <input required ng-model="colaborador.rol" maxlength="15" name="rol" placeholder="rol" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -175,7 +175,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="usuario.username" name="idUsuario" placeholder="Usuario" class="form-control"
+                         <input required ng-model="usuario.username" maxlength="15" name="idUsuario" placeholder="Usuario" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -186,7 +186,7 @@
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input required ng-model="usuario.password" name="idUsuario" placeholder="Contraseña" class="form-control"
+                    <input required ng-model="usuario.password" maxlength="15" name="idUsuario" placeholder="Contraseña" class="form-control"
                            type="text">
                 </div>
             </div>

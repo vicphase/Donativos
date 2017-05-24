@@ -8,10 +8,14 @@
  * Controller of the donativosApp
  */
 angular.module('donativosApp')
-  .controller('EditarcolaboradorCtrl', function ($scope, colaborador, colonia, sector, zona, $routeParams) {
+  .controller('EditarcolaboradorCtrl', function ($scope, colaborador, colonia, sector, zona, $routeParams, usuario) {
       colaborador.get($routeParams.id)
           .then(function(data){
               $scope.colaborador = data.data;
+              usuario.get($scope.colaborador.idUsuario)
+                  .then(function(data){
+                      $scope.usuario=data.data;
+                  });
               console.log($scope.colaborador);
 
               colonia.get($scope.colaborador.idColonia)
@@ -56,6 +60,7 @@ angular.module('donativosApp')
 
       $scope.actualizarColaborador = function(){
           colaborador.update($scope.colaborador);
+          usuario.update($scope.usuario);
       };
 
       $scope.openModal = function () {

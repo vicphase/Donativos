@@ -22,9 +22,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-          templateUrl: 'views/zona/all.html',
-          controller: 'ZonaCtrl',
-          controllerAs: 'zona'
+          templateUrl: 'views/colaborador/all.html',
+          controller: 'ColaboradorCtrl',
+          controllerAs: 'colaborador'
       })
       .when('/zona', {
         templateUrl: 'views/zona/all.html',

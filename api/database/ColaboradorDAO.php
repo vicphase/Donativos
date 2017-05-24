@@ -93,9 +93,8 @@ class ColaboradorDAO
         $telefonoCelular=$Colaborador->getTelefonoCelular();
         $correo=$Colaborador->getCorreo();
         $rol=$Colaborador->getRol();
-        $idUsuario=$Colaborador->getIdusuario();
 
-        DBClass::query("UPDATE colaboradores
+        DBClass::query("UPDATE colaborador
         SET nombre="."'".$nombre."',
         apellidoPaterno="."'".$apellidoPaterno."',
         apellidoMaterno="."'".$apellidoMaterno."',
@@ -107,8 +106,7 @@ class ColaboradorDAO
         telefonoLocal="."'".$telefonoLocal."',
         telefonoCelular="."'".$telefonoCelular."',
         correo="."'".$correo."',
-        rol="."'".$rol."',
-        idUsuario="."'".$idUsuario."'
+        rol="."'".$rol."'
         WHERE id=".$id
         );
     }

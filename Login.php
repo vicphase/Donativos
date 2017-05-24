@@ -47,7 +47,7 @@ $conexion = mysqli_connect($server, $user, $pass, $bd) or die("Error de conexió
     <div class="container">
 
       <form class="form-signin" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Inicio de sesión</h2>
         <label for="inputEmail" class="sr-only">Usuario</label>
         <input type="user" id="Usuario" name="Usuario" class="form-control" placeholder="Ingrese su usuario" maxlength="15" required autofocus>
         <label for="inputPassword" class="sr-only">Clave</label>
@@ -84,7 +84,9 @@ if($rows > 0){
 $row = $result->fetch_assoc();
 header("location: app/index.html");
 }else{
-echo 'Error en la contraseña o usuario';
+echo "<div class='col-md-offset-4 col-md-6'><h4 class='text-danger' style=\"
+    margin-left: 40px;
+\">Error en la contraseña o usuario</h4></div>";
 }
 }
 

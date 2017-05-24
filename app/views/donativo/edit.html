@@ -33,7 +33,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.monto" pattern="[0-9-]+" name="monto" placeholder="Monto" class="form-control"
+                         <input required ng-model="donativo.monto" pattern="[0-9-]+" maxlength="15" name="monto" placeholder="Monto" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -44,7 +44,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.folioRecibo" pattern="[0-9-]+" name="folioRecibo" placeholder="Folio Recibo" class="form-control"
+                         <input required ng-model="donativo.folioRecibo" maxlength="15" pattern="[0-9-]+" name="folioRecibo" placeholder="Folio Recibo" class="form-control"
                            type="text">
                       </div>
                </div>
@@ -55,7 +55,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="donativo.referencia" pattern="[a-zA-Z-]+" name="referencia" placeholder="Referencia" class="form-control"
+                         <input required ng-model="donativo.referencia" maxlength="15" pattern="[a-zA-Z-]+" name="referencia" placeholder="Referencia" class="form-control"
                            type="text">
                       </div>
                </div>
