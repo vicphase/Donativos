@@ -9,6 +9,7 @@
  */
 angular.module('donativosApp')
   .controller('DonativoCtrl', function (donativo, bienhechor, colaborador, $scope) {
+      $scope.existeDonativo=false;
       donativo.all()
           .then(function(data){
               $scope.donativos = data;
@@ -43,6 +44,7 @@ angular.module('donativosApp')
       };
 
       $scope.seleccionarFila=function(donativo){
+          $scope.existeDonativo=true;
           $scope.donativo = donativo;
       };
 

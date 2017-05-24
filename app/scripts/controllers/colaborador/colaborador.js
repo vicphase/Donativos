@@ -9,12 +9,15 @@
  */
 angular.module('donativosApp')
   .controller('ColaboradorCtrl', function (colaborador, $scope) {
+      $scope.existeColaborador=false;
       colaborador.all()
           .then(function(data){
               $scope.colaboradores = data;
           });
       
       $scope.seleccionarFila=function(colaborador){
+          $scope.existeColaborador=true;
+          console.log($scope.existeColaborador);
           $scope.colaborador = colaborador;
       };
 
@@ -28,7 +31,7 @@ angular.module('donativosApp')
       };
 
       $scope.openModal = function () {
-          if(!($scope.colaborador === undefined)){
+          if($scope.existeColaborador){
               $("#myModal").modal();
               $scope.modalMessage = "¿Seguro que desea eliminar a "+$scope.colaborador.nombre+"?";
           }

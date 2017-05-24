@@ -9,6 +9,8 @@
  */
 angular.module('donativosApp')
   .controller('AportacionCtrl', function (aportacion, $scope, bienhechor) {
+      
+      $scope.existeAportacion=false;
       aportacion.all()
           .then(function(data){
               $scope.aportaciones = data;
@@ -29,6 +31,7 @@ angular.module('donativosApp')
       };
 
       $scope.seleccionarFila=function(aportacion){
+          $scope.existeAportacion=true;
           $scope.aportacion = aportacion;
       };
 

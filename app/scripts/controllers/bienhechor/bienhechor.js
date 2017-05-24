@@ -9,6 +9,7 @@
  */
 angular.module('donativosApp')
   .controller('BienhechorCtrl', function ($scope, bienhechor) {
+      $scope.existeBienhechor=false;
       bienhechor.all()
           .then(function(data){
               $scope.bienhechores = data;
@@ -16,6 +17,7 @@ angular.module('donativosApp')
       
 
       $scope.seleccionarFila=function(bienhechor){
+          $scope.existeBienhechor=true;
           $scope.bienhechor = bienhechor;
       };
 

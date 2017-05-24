@@ -9,6 +9,7 @@
  */
 angular.module('donativosApp')
   .controller('ColoniaCtrl', function (colonia, sector, $scope) {
+      $scope.existeCoolonia=false;
       colonia.all()
           .then(function(data){
               $scope.colonias = data;
@@ -21,6 +22,7 @@ angular.module('donativosApp')
           });
 
       $scope.seleccionarFila=function(colonia){
+          $scope.existeCoolonia=true;
           $scope.colonia = colonia;
       };
 

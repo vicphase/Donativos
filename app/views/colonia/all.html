@@ -1,8 +1,8 @@
 <a type="button" class="btn btn-primary" ng-href="#!/nuevaColonia">Añadir</a>
 
-<a type="button" class="btn btn-success" ng-href="#!/editarColonia/{{colonia.id}}">Editar</a>
+<a ng-disabled="!existeCoolonia" type="button" class="btn btn-success" ng-href="#!/editarColonia/{{colonia.id}}">Editar</a>
 
-<button ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+<button ng-disabled="!existeCoolonia" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
 
 <table class="table">
     <thead>
