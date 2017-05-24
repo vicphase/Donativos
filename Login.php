@@ -2,7 +2,7 @@
 $server="localhost";
 $user = "root";
 $pass = "";
-$bd = "D00onativos";
+$bd = "donativos";
 $conexion = mysqli_connect($server, $user, $pass, $bd) or die("Error de conexión" .mysqli_connect_error());
 
 ?>
@@ -23,7 +23,7 @@ $conexion = mysqli_connect($server, $user, $pass, $bd) or die("Error de conexió
     <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="Styles/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -77,19 +77,14 @@ if(isset($_POST["submit"])) {
 session_start();
 $usuario = mysqli_real_escape_string($conexion, $_POST["Usuario"]);
 $clave = mysqli_real_escape_string($conexion, $_POST["Clave"]);
-$error = '';
-$sha1_pass = sha1($clave);
-$sql = "SELECT * FROM Usuarios WHERE username='$usuario' and password='$sha1_pass'";
+$sql = "SELECT * FROM usuario WHERE username='$usuario' and password='$clave'";
 $result=$conexion->query($sql);
 $rows = $result->num_rows;
-if($rows >0){
+if($rows > 0){
 $row = $result->fetch_assoc();
-$_SESSION["tipo_usuario"] = $row["tipo_usuario"];
-$_SESSION["Usuario"]= $row["Usuario"];
-$_SESSION["Clave"] = $row["Clave"];
-header("location: welcome.php");
+header("location: app/index.html");
 }else{
-$error = "El nombre o clave son incorrectos";
+echo 'Error en la contraseña o usuario';
 }
 }
 
