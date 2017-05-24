@@ -8,7 +8,7 @@
  * Service in the donativosApp.
  */
 angular.module('donativosApp')
-  .service('colaborador', function () {
+  .service('colaborador', function ($http) {
     return {
       all: function () {
         return $http({method: 'GET', url: 'http://localhost/Donativos/api/services/colaborador/getAll.php'});
