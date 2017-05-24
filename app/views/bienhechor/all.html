@@ -1,10 +1,17 @@
 
 <h1>Bienhechores</h1>
-<a type="button" class="btn btn-primary" ng-href="#!/nuevoBienhechor">Añadir</a>
+<div class="col-md-6">
+    <a type="button" class="btn btn-primary" ng-href="#!/nuevoBienhechor">Añadir</a>
 
-<a ng-disabled="!existeBienhechor" type="button" class="btn btn-success" ng-href="#!/editarBienhechor/{{bienhechor.id}}">Editar</a>
+    <a ng-disabled="!existeBienhechor" type="button" class="btn btn-success" ng-href="#!/editarBienhechor/{{bienhechor.id}}">Editar</a>
 
-<button ng-disabled="!existeBienhechor" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+    <button ng-disabled="!existeBienhechor" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+</div>
+
+
+<div class="col-md-6">
+    <input class="searchBar" type="text" ng-model="query" placeholder="Search...">
+</div>
 
 <table class="table">
     <thead>
@@ -16,7 +23,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-class="{selected: filaSeleccionada(bienhechor)}" ng-click="seleccionarFila(bienhechor)" ng-repeat="bienhechor in bienhechores.data">
+    <tr ng-class="{selected: filaSeleccionada(bienhechor)}" ng-click="seleccionarFila(bienhechor)" ng-repeat="bienhechor in bienhechores.data | filter:query">
         <td>{{bienhechor.nombre}} {{bienhechor.apellidoPaterno}} {{bienhechor.apellidoMaterno}} </td>
         <td>{{bienhechor.telefonoLocal}}</td>
         <td>{{bienhechor.telefonoCelular}} </td>

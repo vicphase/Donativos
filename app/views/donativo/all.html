@@ -1,9 +1,16 @@
 <h1>Donativos</h1>
-<a type="button" class="btn btn-primary" ng-href="#!/nuevoDonativo">Añadir</a>
+<div class="col-md-6">
+    <a type="button" class="btn btn-primary" ng-href="#!/nuevoDonativo">Añadir</a>
 
-<a ng-disabled="!existeDonativo" type="button" class="btn btn-success" ng-href="#!/editarDonativo/{{donativo.id}}">Editar</a>
+    <a ng-disabled="!existeDonativo" type="button" class="btn btn-success" ng-href="#!/editarDonativo/{{donativo.id}}">Editar</a>
 
-<button ng-disabled="!existeDonativo" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+    <button ng-disabled="!existeDonativo" ng-click="openModal()" class="btn btn-danger">Eliminar</button>
+</div>
+
+
+<div class="col-md-6">
+    <input class="searchBar" type="text" ng-model="query" placeholder="Search...">
+</div>
 
 <table class="table">
     <thead>
@@ -20,12 +27,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data">
+    <tr ng-class="{selected: filaSeleccionada(donativo)}" ng-click="seleccionarFila(donativo)" ng-repeat="donativo in donativos.data | filter:query">
         <td>{{donativo.fecha}}</td>
         <td>{{donativo.folioRecibo}}</td>
         <td>${{donativo.monto}}</td>
-        <td>{{nombreBienhechor(donativo.idBienhechor)}}</td>
-        <td>{{nombreColaborador(donativo.idColaborador)}}</td>
+        <td>{{nombreBienhechor(donativo.idBienhechor, donativo)}}{{donativo.nombreBienhechor}}</td>
+        <td>{{nombreColaborador(donativo.idColaborador, donativo)}}{{donativo.nombreColaborador}}</td>
     </tr>
 
     <!-- Modal -->

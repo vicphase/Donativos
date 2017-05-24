@@ -53,11 +53,11 @@ angular.module('donativosApp')
               });
       };
 
-              $scope.getNombreZona = function (idZona) {
+              $scope.getNombreZona = function (idZona,sector) {
                   if($scope.zonas!=undefined){
                       for(var i=0;i<$scope.zonas.length;i++){
                           if(idZona==$scope.zonas[i].id)
-                              return $scope.zonas[i].nombre;
+                              sector.nombreZona= $scope.zonas[i].nombre;
                       }
                   }
 
