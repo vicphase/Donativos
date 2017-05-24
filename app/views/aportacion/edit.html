@@ -2,42 +2,62 @@
 <form class="well form-horizontal" role="form" data-toggle="validator" id="myForm">
     <fieldset>
         <!-- Form Name -->
-        <legend>Editar Aportacion</legend>
+        <legend>Editar aportacion</legend>
 
         <!-- Text input-->
 
         <div class="form-group">
-            <label class="col-md-4 control-label">ID Frecuenciaaportacion</label>
+            <label class="col-md-4 control-label">Frecuencia anual</label>
             <div class="col-md-4 inputGroupContainer">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input required ng-model="aportacion.idFrecuenciaDonativo" name="idFrecuenciaDonativo" placeholder="ID FrecuenciaDonativo" class="form-control"
-                           type="text">
-                </div>
+                    <select  ng-model="aportacion.frecuenciaMensual" name="frecuenciaMensual" placeholder="frecuenciaMensual" class="form-control">
+                        <option  value="0">Pago único</option>
+                        <option  value="1">1 mes</option>
+                        <option  value="2">2 meses</option>
+                        <option  value="3">3 meses</option>
+                        <option  value="6">6 meses</option>
+                        <option  value="12">12 meses</option>
+                    </select>
             </div>
         </div>
+            </div>
 		
 		<div class="form-group">
-            <label class="col-md-4 control-label">ID MetodoAportacion</label>
+            <label class="col-md-4 control-label">Metodo de aportación</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="aportacion.idMetodoAportacion" name="idMetodoAportacion" placeholder="ID MetodoAportacion" class="form-control"
-                           type="text">
+                        <select  ng-model="aportacion.metodoAportacion" name="metodoAportacion" placeholder="metodoAportacion" class="form-control">
+                            <option  value="efectivo">Pago en efectivo</option>
+                            <option  value="tarjeta">Pago con tarjeta de debito/crédito</option>
+                        </select>
                       </div>
                </div>
         </div>
 		
 	    <div class="form-group">
-           <label class="col-md-4 control-label">ID Bienhechor</label>
+           <label class="col-md-4 control-label">Monto</label>
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                         <input required ng-model="aportacion.idBienhechor" name="idBienhechor" placeholder="ID Bienhechor" class="form-control"
+                         <input required ng-model="aportacion.monto" name="monto" placeholder="Monto" class="form-control"
                            type="text">
                       </div>
                </div>
         </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Bienhechor</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <select  ng-model="aportacion.idBienhechor" name="idBienhechor" placeholder="Bienhechor" class="form-control">
+                            <option  value="{{bienhechor.id}}" ng-repeat="bienhechor in bienhechores">{{bienhechor.nombre}} {{bienhechor.apellidoPaterno}} {{bienhechor.apellidoMaterno}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 		
 
         <!-- Button -->
@@ -85,7 +105,7 @@
                     </div>
                     <div class="modal-footer">
                         <button  ng-click="closeModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <a ng-href="#!/aportacion"  ng-click="closeModal(); agregaraportacion()" type="button" class="btn btn-primary btn-success">Guardar</a>
+                        <a ng-href="#!/aportacion"  ng-click="closeModal(); actualizarAportacion()" type="button" class="btn btn-primary btn-success">Guardar</a>
                     </div>
                 </div>
             </div>

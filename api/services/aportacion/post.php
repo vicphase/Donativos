@@ -8,10 +8,10 @@ $json = json_decode(file_get_contents("php://input"));
 
 $aportacion = new Aportacion();
 
-$aportacion->setId($json->id);
-$aportacion->setIdfrecuenciadonativo($json->idFrecuenciaDonativo);
-$aportacion->setIdmetodoaportacion($json->idMetodoAportacion);
-$aportacion->setIdbienhechor($json->idBienhechor);
+$aportacion->setFrecuenciaMensual($json->frecuenciaMensual);
+$aportacion->setMetodoAportacion($json->metodoAportacion);
+$aportacion->setMonto($json->monto);
+$aportacion->setIdBienhechor($json->idBienhechor);
 
 
 AportacionDAO::postAportacion($aportacion);

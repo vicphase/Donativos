@@ -97,10 +97,25 @@ angular
         controllerAs: 'nuevobienhechor'
       })
       .when('/editarBienhechor/:id', {
-        templateUrl: 'views/bienhechor/edit.html',
-        controller: 'EditarbienhechorCtrl',
-        controllerAs: 'editarbienhechor'
-      })
+            templateUrl: 'views/bienhechor/edit.html',
+            controller: 'EditarbienhechorCtrl',
+            controllerAs: 'editarbienhechor'
+        })
+        .when('/aportacion', {
+            templateUrl: 'views/aportacion/all.html',
+            controller: 'AportacionCtrl',
+            controllerAs: 'aportacion'
+        })
+        .when('/nuevaAportacion', {
+            templateUrl: 'views/aportacion/new.html',
+            controller: 'NuevaaportacionCtrl',
+            controllerAs: 'nuevaAportacion'
+        })
+        .when('/editarAportacion/:id', {
+            templateUrl: 'views/aportacion/edit.html',
+            controller: 'EditaraportacionCtrl',
+            controllerAs: 'editarAportacion'
+        })
       .otherwise({
         redirectTo: '/'
       });

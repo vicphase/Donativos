@@ -41,6 +41,9 @@ angular.module('donativosApp')
               console.log($scope.zonas);
           });
 
+      $scope.true=true;
+      $scope.false=false;
+
       $scope.actualizarBienhechor = function(){
           bienhechor.update($scope.bienhechor);
       };
