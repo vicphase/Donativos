@@ -2,7 +2,7 @@
 $server="localhost";
 $user = "root";
 $pass = "";
-$bd = "donativos";
+$bd = "D00onativos";
 $conexion = mysqli_connect($server, $user, $pass, $bd) or die("Error de conexión" .mysqli_connect_error());
 
 ?>
@@ -79,7 +79,7 @@ $usuario = mysqli_real_escape_string($conexion, $_POST["Usuario"]);
 $clave = mysqli_real_escape_string($conexion, $_POST["Clave"]);
 $error = '';
 $sha1_pass = sha1($clave);
-$sql = "SELECT * FROM usuarios WHERE Usuario='$usuario' and Clave='$sha1_pass'";
+$sql = "SELECT * FROM Usuarios WHERE username='$usuario' and password='$sha1_pass'";
 $result=$conexion->query($sql);
 $rows = $result->num_rows;
 if($rows >0){
