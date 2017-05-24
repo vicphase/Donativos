@@ -96,7 +96,7 @@ angular
         controller: 'NuevobienhechorCtrl',
         controllerAs: 'nuevobienhechor'
       })
-      .when('/editarbienhechor', {
+      .when('/editarbienhechor/:id', {
         templateUrl: 'views/bienhechor/edit.html',
         controller: 'EditarbienhechorCtrl',
         controllerAs: 'editarbienhechor'
